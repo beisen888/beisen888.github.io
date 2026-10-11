@@ -605,6 +605,7 @@
     });
     var click = function (sel) { return function () { var el = $(sel); if (el) el.click(); }; };
     cmds = [
+      { label: 'Ben in 30 seconds', hint: 'Quick summary for recruiters', run: function () { var q = document.querySelector('.quick'); if (q && q.showModal) q.showModal(); } },
       { label: 'Download resume', hint: 'PDF, one page', run: function () { var a = document.createElement('a'); a.href = 'assets/Ben-Eisen-Resume.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); } },
       { label: 'Copy email address', hint: 'beisen@tulane.edu', run: click('.copy-btn') },
       { label: 'Email Ben', hint: 'Opens your email app', run: function () { location.href = 'mailto:beisen@tulane.edu'; } },
@@ -663,5 +664,43 @@
         uEl.textContent = days <= 0 ? 'Today' : days === 1 ? 'Yesterday' : days < 30 ? days + ' days ago' : d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
       })
       .catch(function () {});
+  }
+})();
+
+/* ---------- Ben in 30 seconds, dock, hero spotlight ---------- */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var q = document.querySelector('.quick');
+  if (q && q.showModal) {
+    Array.prototype.forEach.call(document.querySelectorAll('.quick-open'), function (b) {
+      b.addEventListener('click', function () { var m = document.querySelector('.site-menu'); if (m && m.open) m.close(); q.showModal(); });
+    });
+    q.querySelector('.quick-close').addEventListener('click', function () { q.close(); });
+    q.addEventListener('click', function (e) { if (e.target === q) q.close(); });
+    q.querySelector('.quick-more').addEventListener('click', function () {
+      q.close();
+      var t = document.getElementById(this.dataset.go);
+      if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    });
+  }
+  var dock = document.querySelector('.dock'), hero = document.querySelector('.hero');
+  if (dock && hero) {
+    var check = function () {
+      var past = hero.getBoundingClientRect().bottom < 0;
+      var contact = document.getElementById('contact');
+      var atContact = contact && contact.getBoundingClientRect().top < window.innerHeight * 0.6;
+      dock.classList.toggle('show', past && !atContact);
+    };
+    window.addEventListener('scroll', check, { passive: true }); check();
+    dock.querySelector('.dock-top').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+  }
+  var panel = document.querySelector('.hero-panel');
+  if (panel && !reduce && window.matchMedia('(pointer: fine)').matches) {
+    panel.addEventListener('mousemove', function (e) {
+      var r = panel.getBoundingClientRect();
+      panel.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      panel.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
   }
 })();

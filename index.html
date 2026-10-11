@@ -106,7 +106,7 @@
           <p class="lede">I turn customer insight into growth strategy, and I&rsquo;m the person a team counts on to run the numbers and run the room.</p>
           <div class="actions">
             <a class="btn btn-sky" href="assets/Ben-Eisen-Resume.pdf" download>Download resume</a>
-            <a class="btn btn-line" href="mailto:beisen@tulane.edu">Email me</a>
+            <button type="button" class="btn btn-line quick-open"><span class="qo-ico" aria-hidden="true">&#9201;</span>Ben in 30 seconds</button>
           </div>
         </div>
       </div>
@@ -760,8 +760,48 @@
       <ol class="menu-list"><li><a href="#top" data-nav><span class="mi-num">01</span><span class="mi-name">Top</span><span class="mi-desc">Name, photo, and resume</span></a></li><li><a href="#numbers" data-nav><span class="mi-num">02</span><span class="mi-name">By the numbers</span><span class="mi-desc">My key figures at a glance</span></a></li><li><a href="#about" data-nav><span class="mi-num">03</span><span class="mi-name">About</span><span class="mi-desc">Who I am and what I&rsquo;m doing now</span></a></li><li><a href="#how-i-work" data-nav><span class="mi-num">04</span><span class="mi-name">How I work</span><span class="mi-desc">Three habits behind my work</span></a></li><li><a href="#trajectory" data-nav><span class="mi-num">05</span><span class="mi-name">The $BEN chart</span><span class="mi-desc">My path since 2023, plotted like a stock</span></a></li><li><a href="#projects" data-nav><span class="mi-num">06</span><span class="mi-name">Projects</span><span class="mi-desc">Case studies, slides, and decks</span></a></li><li><a href="#experience" data-nav><span class="mi-num">07</span><span class="mi-name">Experience</span><span class="mi-desc">Edoc, brand ambassador, camp counselor</span></a></li><li><a href="#leadership" data-nav><span class="mi-num">08</span><span class="mi-name">Leadership</span><span class="mi-desc">Alpha Kappa Psi and Special Olympics</span></a></li><li><a href="#education" data-nav><span class="mi-num">09</span><span class="mi-name">Education</span><span class="mi-desc">Tulane Freeman and Barcelona</span></a></li><li><a href="#skills" data-nav><span class="mi-num">10</span><span class="mi-name">Skills</span><span class="mi-desc">Strengths, tools, and certifications</span></a></li><li><a href="#interests" data-nav><span class="mi-num">11</span><span class="mi-name">Off the clock</span><span class="mi-desc">What I&rsquo;m into outside work</span></a></li><li><a href="#advice" data-nav><span class="mi-num">12</span><span class="mi-name">Teach me something</span><span class="mi-desc">Leave me a piece of advice</span></a></li><li><a href="#contact" data-nav><span class="mi-num">13</span><span class="mi-name">Contact</span><span class="mi-desc">Email, LinkedIn, and resume</span></a></li><li><a href="#colophon" data-nav><span class="mi-num">14</span><span class="mi-name">Behind this site</span><span class="mi-desc">How I built it, and the stats</span></a></li></ol>
       <div class="menu-actions">
         <a class="btn btn-sky" href="assets/Ben-Eisen-Resume.pdf" download>Download resume</a>
+        <button type="button" class="btn btn-line quick-open menu-quick">Ben in 30 seconds</button>
         <a class="btn btn-line" href="mailto:beisen@tulane.edu">Email me</a>
         <a class="btn btn-line" href="https://www.linkedin.com/in/ben-eisen/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="quick" aria-labelledby="quick-title">
+    <div class="quick-grid">
+      <aside class="quick-side">
+        <img src="assets/ben-eisen.jpg" alt="" width="960" height="1200">
+        <div>
+          <p class="qs-kicker">The 30-second version</p>
+          <h2 id="quick-title">Ben Eisen</h2>
+          <p class="qs-sub">Tulane Freeman, Class of 2027<br>Management and Marketing, 3.65 GPA</p>
+          <p class="qs-status"><i aria-hidden="true"></i>Open to strategy, finance, and marketing roles</p>
+        </div>
+      </aside>
+      <div class="quick-main">
+        <button type="button" class="quick-close" aria-label="Close">&times;</button>
+        <section>
+          <h3>Right now</h3>
+          <p>Finance &amp; Growth Strategy Intern at <b>Edoc Service</b>, one of six on the Growth Team working directly with the CEO and President.</p>
+        </section>
+        <section>
+          <h3>Three things I&rsquo;ve done</h3>
+          <ol class="quick-wins">
+            <li><b>$67,000</b><span>annual budget I run as VP of Finance for a 161-member business fraternity, plus $12,000+ in scholarships awarded each year</span></li>
+            <li><b>8 pages, 22 accounts</b><span>rebuilt Edoc&rsquo;s Scriptus whitepaper and built the target-account research behind its campaign</span></li>
+            <li><b>400+</b><span>leads converted as a brand ambassador, beating national benchmarks with 10&ndash;15% conversion</span></li>
+          </ol>
+        </section>
+        <section class="quick-two">
+          <div><h3>Strongest at</h3><p>Strategy, leadership, and communication</p></div>
+          <div><h3>Based in</h3><p>New Orleans and Chicago</p></div>
+        </section>
+        <div class="quick-actions">
+          <a class="btn btn-solid" href="assets/Ben-Eisen-Resume.pdf" download>Download resume</a>
+          <a class="btn btn-outline" href="mailto:beisen@tulane.edu">Email Ben</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/ben-eisen/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="assets/Ben-Eisen.vcf" download>Save contact</a>
+        </div>
+        <button type="button" class="quick-more" data-go="projects">See the full case studies</button>
       </div>
     </div>
   </dialog>
@@ -783,6 +823,11 @@
   </dialog>
   <nav class="rail" aria-label="Section progress"><ol><li><a href="#top" data-nav aria-label="Top"><span class="rail-label">Top</span></a></li><li><a href="#numbers" data-nav aria-label="By the numbers"><span class="rail-label">By the numbers</span></a></li><li><a href="#about" data-nav aria-label="About"><span class="rail-label">About</span></a></li><li><a href="#how-i-work" data-nav aria-label="How I work"><span class="rail-label">How I work</span></a></li><li><a href="#trajectory" data-nav aria-label="The $BEN chart"><span class="rail-label">The $BEN chart</span></a></li><li><a href="#projects" data-nav aria-label="Projects"><span class="rail-label">Projects</span></a></li><li><a href="#experience" data-nav aria-label="Experience"><span class="rail-label">Experience</span></a></li><li><a href="#leadership" data-nav aria-label="Leadership"><span class="rail-label">Leadership</span></a></li><li><a href="#education" data-nav aria-label="Education"><span class="rail-label">Education</span></a></li><li><a href="#skills" data-nav aria-label="Skills"><span class="rail-label">Skills</span></a></li><li><a href="#interests" data-nav aria-label="Off the clock"><span class="rail-label">Off the clock</span></a></li><li><a href="#advice" data-nav aria-label="Teach me something"><span class="rail-label">Teach me something</span></a></li><li><a href="#contact" data-nav aria-label="Contact"><span class="rail-label">Contact</span></a></li><li><a href="#colophon" data-nav aria-label="Behind this site"><span class="rail-label">Behind this site</span></a></li></ol></nav>
   <div class="toast" role="status" aria-live="polite"></div>
-  <button type="button" class="to-top" aria-label="Back to top">&uarr;</button>
+  <div class="dock" role="toolbar" aria-label="Quick actions">
+    <a class="dock-btn dock-primary" href="assets/Ben-Eisen-Resume.pdf" download><span aria-hidden="true">&#8595;</span> Resume</a>
+    <button type="button" class="dock-btn quick-open"><span aria-hidden="true">&#9201;</span> 30-sec view</button>
+    <a class="dock-btn" href="mailto:beisen@tulane.edu">Email</a>
+    <button type="button" class="dock-btn dock-top" aria-label="Back to top">&uarr;</button>
+  </div>
 </body>
 </html>
