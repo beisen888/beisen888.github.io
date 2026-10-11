@@ -745,3 +745,33 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .btn-line { background: transparent; }
 .contact .local-time { margin: 0 0 0 auto; font-size: 14px; max-width: none; }
 @media (max-width: 700px) { .contact .local-time { margin-left: 0; } }
+
+/* ============ Print: a clean resume-style printout ============ */
+@media print {
+  @page { margin: 0.6in; }
+  :root { --paper: #fff; --surface: #fff; --ink: #000; --muted: #333; --rule: #bbb; --label: #0b4a36; --tint: #fff; }
+  body { font-size: 11pt; background: #fff; color: #000; }
+  .nav, .ticker, .creds, .rail, .to-top, .toast, .growth, .status, .actions, .filters, .case-toggle, .matrix, .roadmap,
+  .gallery, .doc-pages, .case-visual, .stock, #trajectory, #how-i-work, .advice, #interests, .colophon, .contact-extras,
+  .skills-layout .radar, .theme-btn, .menu-btn, .cmdk-btn, dialog, .kpis, .case-link, .skip { display: none !important; }
+  .hero { display: block; background: #fff; color: #000; min-height: 0; max-height: none; }
+  .hero-photo { display: none; }
+  .hero-panel { padding: 0 0 12pt; }
+  h1 { font-size: 40pt; color: #0b4a36; }
+  .hero-kicker { color: #333; }
+  .lede { color: #000; font-size: 13pt; max-width: none; }
+  .hero-text::after { content: "beisen@tulane.edu  |  linkedin.com/in/ben-eisen  |  beisen888.github.io"; font-family: var(--display); font-size: 10pt; }
+  .block, .ledger-section { padding: 14pt 0; }
+  .block-title, .ledger-intro h2 { font-size: 18pt; margin-bottom: 8pt; }
+  .js .case-more, .case-more { grid-template-rows: 1fr !important; opacity: 1 !important; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+  .case, .entry { break-inside: avoid; padding: 10pt 0; }
+  .split, .case, .ledger-grid, .entry, .edu, .skills div { gap: 12pt; }
+  .contact { background: #fff; color: #000; padding: 12pt 0; }
+  .contact h2 { font-size: 22pt; color: #0b4a36; }
+  .contact p { color: #000; }
+  .footer { background: #fff; color: #333; }
+  a { color: #000; text-decoration: none; }
+  .timeline::before, .timeline::after, .timeline .entry::before { display: none; }
+  .timeline .entry { padding-left: 0; }
+}
