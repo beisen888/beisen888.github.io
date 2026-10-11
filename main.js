@@ -67,8 +67,11 @@
   });
 
   /* ---------- Active section in nav ---------- */
-  var navLinks = $$('.nav ul a[href^="#"]').filter(function (a) { return a.getAttribute('href').length > 1; });
-  var sections = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+  var navLinks = $$('a[data-nav]');
+  var seen = {};
+  var sections = navLinks.map(function (a) { return a.getAttribute('href').slice(1); })
+    .filter(function (id) { if (seen[id]) return false; seen[id] = true; return true; })
+    .map(function (id) { return document.getElementById(id); }).filter(Boolean);
   if ('IntersectionObserver' in window && sections.length) {
     var navObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
@@ -81,6 +84,25 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { navObs.observe(s); });
+  }
+
+  /* ---------- Section menu ---------- */
+  var menu = $('.site-menu'), menuBtn = $('.menu-btn');
+  if (menu && menuBtn && typeof menu.showModal === 'function') {
+    menuBtn.addEventListener('click', function () { menu.showModal(); menuBtn.setAttribute('aria-expanded', 'true'); });
+    $('.menu-close', menu).addEventListener('click', function () { menu.close(); });
+    menu.addEventListener('close', function () { menuBtn.setAttribute('aria-expanded', 'false'); });
+    menu.addEventListener('click', function (e) { if (e.target === menu) menu.close(); });
+    $$('a[href^="#"]', menu).forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById(a.getAttribute('href').slice(1));
+        menu.close();
+        if (target) { target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); history.replaceState(null, '', a.getAttribute('href')); }
+      });
+    });
+  } else if (menuBtn) {
+    menuBtn.addEventListener('click', function () { location.hash = '#contact'; });
   }
 
   /* ---------- Scroll reveal ---------- */

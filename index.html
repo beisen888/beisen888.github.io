@@ -49,15 +49,16 @@
       <a class="brand" href="#top">Ben Eisen</a>
       <nav aria-label="Main">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#interests">Interests</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+          <li><a href="#experience" data-nav>Experience</a></li>
+          <li><a href="#skills" data-nav>Skills</a></li>
+          <li><a href="#contact" class="nav-cta" data-nav>Contact</a></li>
         </ul>
       </nav>
+      <button type="button" class="menu-btn" aria-haspopup="dialog" aria-controls="site-menu">
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-label">All sections</span>
+      </button>
       <button type="button" class="theme-btn" aria-label="Switch to dark mode" title="Switch light or dark mode">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>
@@ -102,7 +103,7 @@
     </section>
 
     <!-- Ledger -->
-    <section class="ledger-section" aria-labelledby="ledger-title">
+    <section class="ledger-section" id="numbers" aria-labelledby="ledger-title">
       <div class="wrap ledger-grid">
         <div class="ledger-intro">
           <h2 id="ledger-title">By the numbers</h2>
@@ -691,6 +692,21 @@
       <p class="lb-cap"></p>
     </div>
   </dialog>
+  <dialog class="site-menu" id="site-menu" aria-label="All sections">
+    <div class="menu-inner">
+      <div class="menu-top">
+        <p class="menu-title">Jump to a section</p>
+        <button type="button" class="menu-close">Close <span aria-hidden="true">&times;</span></button>
+      </div>
+      <ol class="menu-list"><li><a href="#top" data-nav><span class="mi-num">01</span><span class="mi-name">Top</span><span class="mi-desc">Name, photo, and resume</span></a></li><li><a href="#numbers" data-nav><span class="mi-num">02</span><span class="mi-name">By the numbers</span><span class="mi-desc">My key figures at a glance</span></a></li><li><a href="#about" data-nav><span class="mi-num">03</span><span class="mi-name">About</span><span class="mi-desc">Who I am and what I&rsquo;m doing now</span></a></li><li><a href="#how-i-work" data-nav><span class="mi-num">04</span><span class="mi-name">How I work</span><span class="mi-desc">Three habits behind my work</span></a></li><li><a href="#trajectory" data-nav><span class="mi-num">05</span><span class="mi-name">The $BEN chart</span><span class="mi-desc">My path since 2023, plotted like a stock</span></a></li><li><a href="#projects" data-nav><span class="mi-num">06</span><span class="mi-name">Projects</span><span class="mi-desc">Case studies, slides, and decks</span></a></li><li><a href="#experience" data-nav><span class="mi-num">07</span><span class="mi-name">Experience</span><span class="mi-desc">Edoc, brand ambassador, camp counselor</span></a></li><li><a href="#leadership" data-nav><span class="mi-num">08</span><span class="mi-name">Leadership</span><span class="mi-desc">Alpha Kappa Psi and Special Olympics</span></a></li><li><a href="#education" data-nav><span class="mi-num">09</span><span class="mi-name">Education</span><span class="mi-desc">Tulane Freeman and Barcelona</span></a></li><li><a href="#skills" data-nav><span class="mi-num">10</span><span class="mi-name">Skills</span><span class="mi-desc">Strengths, tools, and certifications</span></a></li><li><a href="#interests" data-nav><span class="mi-num">11</span><span class="mi-name">Off the clock</span><span class="mi-desc">What I&rsquo;m into outside work</span></a></li><li><a href="#advice" data-nav><span class="mi-num">12</span><span class="mi-name">Teach me something</span><span class="mi-desc">Leave me a piece of advice</span></a></li><li><a href="#contact" data-nav><span class="mi-num">13</span><span class="mi-name">Contact</span><span class="mi-desc">Email, LinkedIn, and resume</span></a></li></ol>
+      <div class="menu-actions">
+        <a class="btn btn-sky" href="assets/Ben-Eisen-Resume.pdf" download>Download resume</a>
+        <a class="btn btn-line" href="mailto:beisen@tulane.edu">Email me</a>
+        <a class="btn btn-line" href="https://www.linkedin.com/in/ben-eisen/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </dialog>
+  <nav class="rail" aria-label="Section progress"><ol><li><a href="#top" data-nav aria-label="Top"><span class="rail-label">Top</span></a></li><li><a href="#numbers" data-nav aria-label="By the numbers"><span class="rail-label">By the numbers</span></a></li><li><a href="#about" data-nav aria-label="About"><span class="rail-label">About</span></a></li><li><a href="#how-i-work" data-nav aria-label="How I work"><span class="rail-label">How I work</span></a></li><li><a href="#trajectory" data-nav aria-label="The $BEN chart"><span class="rail-label">The $BEN chart</span></a></li><li><a href="#projects" data-nav aria-label="Projects"><span class="rail-label">Projects</span></a></li><li><a href="#experience" data-nav aria-label="Experience"><span class="rail-label">Experience</span></a></li><li><a href="#leadership" data-nav aria-label="Leadership"><span class="rail-label">Leadership</span></a></li><li><a href="#education" data-nav aria-label="Education"><span class="rail-label">Education</span></a></li><li><a href="#skills" data-nav aria-label="Skills"><span class="rail-label">Skills</span></a></li><li><a href="#interests" data-nav aria-label="Off the clock"><span class="rail-label">Off the clock</span></a></li><li><a href="#advice" data-nav aria-label="Teach me something"><span class="rail-label">Teach me something</span></a></li><li><a href="#contact" data-nav aria-label="Contact"><span class="rail-label">Contact</span></a></li></ol></nav>
   <div class="toast" role="status" aria-live="polite"></div>
   <button type="button" class="to-top" aria-label="Back to top">&uarr;</button>
 </body>
