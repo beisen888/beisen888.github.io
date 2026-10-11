@@ -126,6 +126,14 @@ h1 {
 .prose p:last-child { margin: 0; }
 .block-intro { margin: 0 0 48px; color: var(--muted); max-width: 52ch; }
 
+/* ============ Right now ============ */
+.now-title { margin: 40px 0 12px; font-size: 20px; font-weight: 800; font-stretch: 112%; color: var(--label); }
+.now { margin: 0; }
+.now div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-top: 1px solid var(--rule); }
+.now div:last-child { border-bottom: 1px solid var(--rule); }
+.now dt { font-weight: 600; font-size: 15px; color: var(--muted); }
+.now dd { margin: 0; }
+
 /* ============ Case studies ============ */
 .case {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: 56px;
