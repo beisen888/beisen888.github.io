@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -121,40 +121,160 @@
       <div class="wrap">
         <div class="split">
           <h2 class="block-title">Projects</h2>
-          <p class="block-intro">Strategy and marketing work from my internship and my classes. Each one started with a real business question.</p>
+          <div>
+            <p class="block-intro">Strategy and marketing work from my internship and my classes. Each one started with a real business question. Open any case to see the full story and the actual slides.</p>
+            <div class="filters" role="group" aria-label="Filter projects">
+              <button type="button" class="chip" aria-pressed="true" data-filter="all">All work</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="internship">Internship</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="strategy">Strategy</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="marketing">Marketing</button>
+            </div>
+          </div>
         </div>
 
-        <article class="case">
+        <!-- Scriptus -->
+        <article class="case reveal" data-cat="internship marketing" id="case-scriptus">
           <div class="case-meta">
             <p class="case-tag">Edoc Service, internship work</p>
             <h3>Taking Scriptus to hospice leaders</h3>
             <p class="case-sum">Go-to-market work for Scriptus, Edoc&rsquo;s AI plus human-verified documentation platform for hospice and palliative care teams.</p>
             <p class="case-role"><strong>My role:</strong> I rebuilt the 2026 whitepaper from an earlier draft, restructuring most of it, adding new research, and redesigning the layout. I also built the target-account research behind the campaign.</p>
-            <p class="case-link"><a href="assets/work/Scriptus-Whitepaper-2026.pdf" target="_blank" rel="noopener">Read the full whitepaper (PDF, 8 pages)</a></p>
+            <ul class="kpis" aria-label="Key numbers">
+              <li><b>8</b> pages</li><li><b>25</b> sources</li><li><b>22</b> accounts profiled</li>
+            </ul>
+            <p class="case-link"><a href="assets/work/Scriptus-Whitepaper-2026.pdf" target="_blank" rel="noopener">Read the full whitepaper (PDF)</a></p>
           </div>
           <div class="case-body">
             <figure class="case-visual">
               <div class="doc-pages">
-                <img src="assets/work/scriptus-whitepaper-cover.jpg" alt="Whitepaper cover: Innovative Staffing Strategies, Future of Hospice Care, 2026" width="935" height="1210" loading="lazy">
-                <img src="assets/work/scriptus-whitepaper-page2.jpg" alt="Whitepaper page 2: Strengthening Hospice Teams, with staffing ranked the number one challenge in hospice" width="935" height="1210" loading="lazy">
+                <button type="button" class="zoom" data-lightbox="scriptus" data-src="assets/work/scriptus-whitepaper-cover.jpg" data-caption="Whitepaper cover"><img src="assets/work/scriptus-whitepaper-cover.jpg" alt="Whitepaper cover: Innovative Staffing Strategies, Future of Hospice Care, 2026" width="935" height="1210" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="scriptus" data-src="assets/work/scriptus-whitepaper-page2.jpg" data-caption="Page 2: Strengthening Hospice Teams"><img src="assets/work/scriptus-whitepaper-page2.jpg" alt="Whitepaper page 2: Strengthening Hospice Teams, with staffing ranked the number one challenge in hospice" width="935" height="1210" loading="lazy"></button>
               </div>
-              <figcaption>&ldquo;Innovative Staffing Strategies: Future of Hospice Care,&rdquo; an 8-page whitepaper built on 25 industry and academic sources.</figcaption>
+              <figcaption>&ldquo;Innovative Staffing Strategies: Future of Hospice Care.&rdquo; Click a page to enlarge it.</figcaption>
             </figure>
-            <dl class="case-steps">
-              <div><dt>The question</dt><dd>How do you sell documentation software to hospice leaders whose biggest problem is staffing, not software?</dd></div>
-              <div><dt>The whitepaper</dt><dd>It meets leaders where the pain is. Executives rank staffing the #1 challenge in hospice, 78% of hospice and palliative care nurses report moderate or higher compassion fatigue, and palliative care need is projected to rise 42% by 2040. The paper ties each pain point back to Scriptus: AI captures the clinical conversation, and human editors check it, so clinicians spend less time on paperwork and more with patients.</dd></div>
-              <div><dt>The target accounts</dt><dd>A research workbook profiling hospice and home-health organizations on scale, fit, current vendor, and the leaders who make the buying decision, ranked into a short list for outreach. Account names and contacts stay confidential.
-                <ul class="mini-ledger" aria-label="Target account research at a glance">
-                  <li><span class="ml-num">22</span><span class="ml-lab">organizations profiled</span></li>
-                  <li><span class="ml-num">11 + 11</span><span class="ml-lab">national and Ohio accounts</span></li>
-                  <li><span class="ml-num">5</span><span class="ml-lab">top priorities for outreach</span></li>
-                </ul>
-              </dd></div>
-            </dl>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-scriptus"><span>Open case study</span></button>
+            <div class="case-more" id="more-scriptus">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>How do you sell documentation software to hospice leaders whose biggest problem is staffing, not software?</dd></div>
+                <div><dt>The whitepaper</dt><dd>It meets leaders where the pain is. Executives rank staffing the #1 challenge in hospice, 78% of hospice and palliative care nurses report moderate or higher compassion fatigue, and palliative care need is projected to rise 42% by 2040. The paper ties each pain point back to Scriptus: AI captures the clinical conversation, and human editors check it, so clinicians spend less time on paperwork and more with patients.</dd></div>
+                <div><dt>The target accounts</dt><dd>A research workbook profiling hospice and home-health organizations on scale, fit, current vendor, and the leaders who make the buying decision, ranked into a short list for outreach. Account names and contacts stay confidential.
+                  <ul class="mini-ledger" aria-label="Target account research at a glance">
+                    <li><span class="ml-num">22</span><span class="ml-lab">organizations profiled</span></li>
+                    <li><span class="ml-num">11 + 11</span><span class="ml-lab">national and Ohio accounts</span></li>
+                    <li><span class="ml-num">5</span><span class="ml-lab">top priorities for outreach</span></li>
+                  </ul>
+                </dd></div>
+              </dl>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="case">
+        <!-- TSA -->
+        <article class="case reveal" data-cat="strategy" id="case-tsa">
+          <div class="case-meta">
+            <p class="case-tag">MGMT 4920, team of four, Sept 2026</p>
+            <h3>Screen for objects, not behavior</h3>
+            <p class="case-sum">We recommended the TSA retire SPOT, its behavior-detection program, and move that budget into scanners that find the dangerous object itself.</p>
+            <p class="case-role"><strong>My role:</strong> I presented why our solution works, plus the implementation plan and the financials behind it.</p>
+            <ul class="kpis" aria-label="Key numbers">
+              <li><b>0.52%</b> of SPOT referrals arrested</li><li><b>$200M</b> a year redirected</li><li><b>140&ndash;200</b> upgraded lanes a year</li>
+            </ul>
+            <p class="case-link"><a href="assets/work/TSA-SPOT-Case-Deck.pdf" target="_blank" rel="noopener">View the full deck (PDF)</a></p>
+          </div>
+          <div class="case-body">
+            <figure class="case-visual matrix" aria-labelledby="matrix-cap">
+              <div class="matrix-head">
+                <p class="matrix-title" id="matrix-cap">Try our decision matrix</p>
+                <button type="button" class="matrix-reset">Reset to our weights</button>
+              </div>
+              <p class="matrix-help">Drag a slider to change how much a criterion matters. The scores update live.</p>
+              <div class="matrix-grid">
+                <div class="sliders">
+                  <label><span>Threat detection</span><input type="range" min="0" max="50" step="5" value="30" data-w="0"><output>30</output></label>
+                  <label><span>Screening accuracy</span><input type="range" min="0" max="50" step="5" value="25" data-w="1"><output>25</output></label>
+                  <label><span>Fairness</span><input type="range" min="0" max="50" step="5" value="20" data-w="2"><output>20</output></label>
+                  <label><span>Passenger experience</span><input type="range" min="0" max="50" step="5" value="15" data-w="3"><output>15</output></label>
+                  <label><span>Cost and ease</span><input type="range" min="0" max="50" step="5" value="10" data-w="4"><output>10</output></label>
+                </div>
+                <div class="bars" aria-live="polite">
+                  <div class="bar lead" data-opt="0" style="--w:89%"><span class="bar-name">Evidence-based targeted screening</span><span class="bar-track"><span class="bar-fill"></span></span><span class="bar-val">4.45</span></div>
+                  <div class="bar" data-opt="1" style="--w:53%"><span class="bar-name">Reform and standardize SPOT</span><span class="bar-track"><span class="bar-fill"></span></span><span class="bar-val">2.65</span></div>
+                  <div class="bar" data-opt="2" style="--w:72%"><span class="bar-name">Expanded pre-screening</span><span class="bar-track"><span class="bar-fill"></span></span><span class="bar-val">3.60</span></div>
+                </div>
+              </div>
+            </figure>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-tsa"><span>Open case study</span></button>
+            <div class="case-more" id="more-tsa">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>How can TSA stop dangerous objects and credible threats from getting on planes, instead of trying to predict which passengers might be dangerous?</dd></div>
+                <div><dt>Why SPOT fails</dt><dd>Only 0.52% of passengers referred through SPOT were arrested, and none of those arrests involved a threat to air travel. Each referral meant a 13-minute full search, and the program costs about $200M a year.</dd></div>
+                <div><dt>What we recommended</dt><dd>Phase out SPOT and redirect its budget into CT scanners for carry-ons and millimeter-wave body scanners, with a scanner alarm as the only trigger for secondary screening, the same for everyone. At $1.0&ndash;1.4M per lane, the same $200M buys 140&ndash;200 upgraded lanes a year: a pilot at 8&ndash;10 airports first, nationwide by 2035.</dd></div>
+                <div><dt>Proof it works</dt><dd>Heathrow chose the same body scanner after head-to-head testing, and it doubled screening throughput compared with the scanners it replaced.</dd></div>
+              </dl>
+              <div class="gallery" aria-label="Slides from the TSA deck">
+                <button type="button" class="zoom" data-lightbox="tsa" data-src="assets/work/tsa-slide-1.jpg" data-caption="Title slide"><img src="assets/work/tsa-slide-1.jpg" alt="Title slide: Security in TSA" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="tsa" data-src="assets/work/tsa-slide-6.jpg" data-caption="Decision matrix: evidence-based screening scores 4.45 out of 5"><img src="assets/work/tsa-slide-6.jpg" alt="Decision matrix slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="tsa" data-src="assets/work/tsa-slide-10.jpg" data-caption="Implementation and financials: $1.0 to 1.4M per lane"><img src="assets/work/tsa-slide-10.jpg" alt="Implementation specifics and financials slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="tsa" data-src="assets/work/tsa-slide-12.jpg" data-caption="Pilot airports, 2025 to 2026"><img src="assets/work/tsa-slide-12.jpg" alt="Map of pilot airports slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="tsa" data-src="assets/work/tsa-slide-13.jpg" data-caption="Vision for the future: SPOT phased out by 2035"><img src="assets/work/tsa-slide-13.jpg" alt="Vision for the future timeline slide" width="1280" height="720" loading="lazy"></button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Qualico -->
+        <article class="case reveal" data-cat="strategy" id="case-qualico">
+          <div class="case-meta">
+            <p class="case-tag">Business Capstone, team of four, fall 2026</p>
+            <h3>Connected decentralization at Qualico</h3>
+            <p class="case-sum">How a fast-growing, decentralized homebuilder and real estate company can coordinate better without losing the entrepreneurial culture that made it successful.</p>
+            <p class="case-role"><strong>My role:</strong> One of four consultants on the team, from problem diagnosis through the implementation roadmap.</p>
+            <ul class="kpis" aria-label="Key numbers">
+              <li><b>3</b> paths compared</li><li><b>4</b> shared pillars</li><li><b>24</b> month rollout</li>
+            </ul>
+            <p class="case-link"><a href="assets/work/Qualico-Capstone-Deck.pdf" target="_blank" rel="noopener">View the full deck (PDF)</a></p>
+          </div>
+          <div class="case-body">
+            <figure class="case-visual roadmap" aria-labelledby="roadmap-cap">
+              <p class="matrix-title" id="roadmap-cap">The 24-month rollout</p>
+              <div class="phases" role="tablist" aria-label="Rollout phases">
+                <button type="button" role="tab" class="phase" aria-selected="true" aria-controls="phase-panel" data-phase="0"><b>1</b><span>0&ndash;6 mo</span></button>
+                <button type="button" role="tab" class="phase" aria-selected="false" aria-controls="phase-panel" data-phase="1"><b>2</b><span>6&ndash;12 mo</span></button>
+                <button type="button" role="tab" class="phase" aria-selected="false" aria-controls="phase-panel" data-phase="2"><b>3</b><span>12&ndash;18 mo</span></button>
+                <button type="button" role="tab" class="phase" aria-selected="false" aria-controls="phase-panel" data-phase="3"><b>4</b><span>18&ndash;24 mo</span></button>
+              </div>
+              <div class="phase-track"><span class="phase-fill"></span></div>
+              <div class="phase-panel" id="phase-panel" role="tabpanel" aria-live="polite">
+                <h4>Shared KPI dashboard</h4>
+                <p>Launch the Enterprise Hub app to regional managers, starting with a shared KPI dashboard tied to StreetSide&rsquo;s existing forum, the lowest-friction place to start.</p>
+              </div>
+            </figure>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-qualico"><span>Open case study</span></button>
+            <div class="case-more" id="more-qualico">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>How can Qualico improve coordination and collaboration without sacrificing the autonomy and entrepreneurial culture behind its competitive advantage?</dd></div>
+                <div><dt>The diagnosis</dt><dd>Qualico&rsquo;s business units share one value chain but compete with each other for capital. Leadership can&rsquo;t see who is at capacity, every unit pitches for capital its own way, and best practices only move at a twice-a-year forum. Its structure doesn&rsquo;t match its strategy.</dd></div>
+                <div><dt>What we recommended</dt><dd>Connected decentralization. Corporate centralizes four things: data and KPIs, a standard capital scorecard, a talent register, and a best-practice hub. Business units keep product, pricing, customers, suppliers, hiring, land, and day-to-day execution. We compared it against full centralization and scaling up the status quo, and it was the only option that balanced visibility with autonomy.</dd></div>
+              </dl>
+              <div class="gallery" aria-label="Slides from the Qualico deck">
+                <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-1.jpg" data-caption="Title slide"><img src="assets/work/qualico-slide-1.jpg" alt="Qualico title slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-9.jpg" data-caption="Connected decentralization fits the right structure"><img src="assets/work/qualico-slide-9.jpg" alt="Connected decentralization structure slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-12.jpg" data-caption="Qualico Enterprise Hub, with an app mockup"><img src="assets/work/qualico-slide-12.jpg" alt="Qualico Enterprise Hub slide with app mockup" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-15.jpg" data-caption="Four-phase implementation"><img src="assets/work/qualico-slide-15.jpg" alt="Solution implementation phases slide" width="1280" height="720" loading="lazy"></button>
+                <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-16.jpg" data-caption="Qualico 2031: the vision for the future"><img src="assets/work/qualico-slide-16.jpg" alt="Vision for the future slide" width="1280" height="720" loading="lazy"></button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Huskies -->
+        <article class="case reveal" data-cat="marketing" id="case-huskies">
           <div class="case-meta">
             <p class="case-tag">Sports Marketing, team project</p>
             <h3>Launching the Toronto Huskies</h3>
@@ -179,14 +299,20 @@
               </svg>
               <figcaption id="huskies-cap">The four fan segments we targeted. Gen Z, highlighted, was my focus.</figcaption>
             </figure>
-            <dl class="case-steps">
-              <div><dt>The question</dt><dd>Who would buy tickets and gear for a brand-new NFL team in Toronto, and how do you reach them?</dd></div>
-              <div><dt>What we built</dt><dd>Two flagship campaigns: &ldquo;From the Gridiron Up,&rdquo; a legacy campaign, and &ldquo;Your City, Your Team,&rdquo; a digital campaign that lets fans help shape the brand.</dd></div>
-            </dl>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-huskies"><span>Open case study</span></button>
+            <div class="case-more" id="more-huskies">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>Who would buy tickets and gear for a brand-new NFL team in Toronto, and how do you reach them?</dd></div>
+                <div><dt>What we built</dt><dd>Two flagship campaigns: &ldquo;From the Gridiron Up,&rdquo; a legacy campaign, and &ldquo;Your City, Your Team,&rdquo; a digital campaign that lets fans help shape the brand.</dd></div>
+              </dl>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="case">
+        <!-- Amerisafe -->
+        <article class="case reveal" data-cat="strategy" id="case-amerisafe">
           <div class="case-meta">
             <p class="case-tag">Strategic analysis, class project</p>
             <h3>Where Amerisafe wins</h3>
@@ -214,25 +340,25 @@
               </svg>
               <figcaption id="amerisafe-cap">Five Forces, measured against Travelers, Liberty Mutual, and EMPLOYERS Holdings.</figcaption>
             </figure>
-            <dl class="case-steps">
-              <div><dt>The question</dt><dd>What forces shape workers&rsquo; comp insurance, and where does Amerisafe have an edge?</dd></div>
-              <div><dt>What we found</dt><dd>A PESTEL scan surfaced OSHA deregulation, employment levels, an aging and less experienced workforce, AI and wearables, climate exposure, and eroding exclusive-remedy protections. The verdict: rivalry is the biggest threat to profits, and specialization is Amerisafe&rsquo;s core advantage.</dd></div>
-            </dl>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-amerisafe"><span>Open case study</span></button>
+            <div class="case-more" id="more-amerisafe">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>What forces shape workers&rsquo; comp insurance, and where does Amerisafe have an edge?</dd></div>
+                <div><dt>What we found</dt><dd>A PESTEL scan surfaced OSHA deregulation, employment levels, an aging and less experienced workforce, AI and wearables, climate exposure, and eroding exclusive-remedy protections. The verdict: rivalry is the biggest threat to profits, and specialization is Amerisafe&rsquo;s core advantage.</dd></div>
+              </dl>
+              </div>
+            </div>
           </div>
         </article>
 
-        <div class="more">
+        <div class="more reveal">
           <h3 class="more-title">More work</h3>
-          <ul class="more-list">
+          <ul class="more-list more-two">
             <li>
               <p class="more-name">Remote vs. in-person work</p>
               <p class="more-ctx">Business Capstone, fall 2026</p>
               <p>Does where employees work affect how well they work? Our team recommends hybrid, with in-person still central and remote where an industry needs it. I own the industry-level analysis.</p>
-            </li>
-            <li>
-              <p class="more-name">TSA SPOT program case</p>
-              <p class="more-ctx">MGMT 4920, team case presentation</p>
-              <p>A case on the TSA&rsquo;s behavior-detection screening program. I presented why our recommended solution works, plus the implementation plan and financials.</p>
             </li>
             <li>
               <p class="more-name">Okra Abbey consulting engagement</p>

@@ -247,3 +247,95 @@ h1 {
   .contact { padding: 80px 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ============ Projects: filters, KPIs, galleries ============ */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -24px 0 48px; }
+.chip {
+  font-family: var(--display); font-size: 14px; font-weight: 600; cursor: pointer;
+  padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--label);
+  background: transparent; color: var(--label); transition: background .2s, color .2s;
+}
+.chip:hover { background: color-mix(in srgb, var(--label) 10%, transparent); }
+.chip[aria-pressed="true"] { background: var(--label); color: var(--paper); }
+.no-js .filters, .no-js .case-toggle { display: none; }
+.case.is-hidden { display: none; }
+
+.kpis { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.kpis li {
+  font-family: var(--display); font-size: 13px; color: var(--muted);
+  border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; padding: 6px 10px;
+}
+.kpis b { color: var(--label); font-size: 15px; margin-right: 2px; }
+
+.case-toggle {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 4px; cursor: pointer;
+  font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--label);
+  background: none; border: 0; padding: 6px 0; border-bottom: 2px solid var(--label);
+}
+.case-toggle::after {
+  content: ""; width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-3px); transition: transform .25s ease;
+}
+.case-toggle[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-1px); }
+.case-more { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .45s ease, opacity .35s ease; }
+.case-more > * { min-height: 0; }
+.js .case-more { grid-template-rows: 0fr; opacity: 0; overflow: hidden; }
+.js .case-more.open { grid-template-rows: 1fr; opacity: 1; }
+.case-more-inner { overflow: hidden; padding-top: 24px; }
+
+.zoom { padding: 0; border: 0; background: none; cursor: zoom-in; display: block; width: 100%; }
+.zoom img { transition: transform .3s ease; }
+.zoom:hover img { transform: translateY(-3px); }
+.gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 46%); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px; margin-top: 28px; }
+.gallery .zoom { scroll-snap-align: start; }
+.gallery img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 4px; }
+
+/* TSA decision matrix */
+.matrix-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.matrix-title { margin: 0; font-family: var(--display); font-weight: 800; font-size: 18px; color: var(--ink); }
+.matrix-reset { font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--label); background: none; border: 0; text-decoration: underline; cursor: pointer; padding: 0; }
+.matrix-help { margin: 6px 0 18px; font-family: var(--display); font-size: 13px; color: var(--muted); }
+.matrix-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px; align-items: center; }
+.sliders { display: grid; gap: 12px; }
+.sliders label { display: grid; grid-template-columns: 1fr 34px; grid-template-areas: "name out" "range range"; font-family: var(--display); font-size: 13px; color: var(--ink); }
+.sliders label span { grid-area: name; }
+.sliders output { grid-area: out; text-align: right; font-weight: 700; color: var(--label); font-variant-numeric: tabular-nums; }
+.sliders output::after { content: "%"; font-weight: 400; color: var(--muted); }
+.sliders input { grid-area: range; width: 100%; accent-color: var(--green); margin: 4px 0 0; }
+.bars { display: grid; gap: 16px; }
+.bar { display: grid; grid-template-columns: 1fr 44px; grid-template-areas: "name val" "track track"; font-family: var(--display); }
+.bar-name { grid-area: name; font-size: 13px; color: var(--muted); }
+.bar-val { grid-area: val; text-align: right; font-weight: 700; font-size: 18px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.bar-track { grid-area: track; height: 12px; background: var(--tint); border-radius: 6px; overflow: hidden; margin-top: 6px; }
+.bar-fill { display: block; height: 100%; width: var(--w, 0%); background: var(--rule); border-radius: 6px; transition: width .5s cubic-bezier(.2,.8,.2,1), background .3s; }
+.bar.lead .bar-fill { background: var(--green); }
+.bar.lead .bar-name { color: var(--ink); font-weight: 600; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .bar.lead .bar-fill { background: var(--sky); } }
+:root[data-theme="dark"] .bar.lead .bar-fill { background: var(--sky); }
+
+/* Qualico roadmap */
+.phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+.phase {
+  font-family: var(--display); cursor: pointer; text-align: left; padding: 10px 12px; border-radius: 6px;
+  border: 1.5px solid var(--rule); background: var(--tint); color: var(--muted); transition: all .2s;
+}
+.phase b { display: block; font-size: 22px; color: var(--ink); line-height: 1; }
+.phase span { font-size: 12px; }
+.phase[aria-selected="true"] { background: var(--green); border-color: var(--green); color: #d9ece4; }
+.phase[aria-selected="true"] b { color: #fff; }
+.phase-track { height: 4px; background: var(--tint); border-radius: 2px; margin: 14px 0 0; overflow: hidden; }
+.phase-fill { display: block; height: 100%; width: 25%; background: var(--sky); transition: width .45s ease; }
+.phase-panel { min-height: 118px; padding-top: 14px; }
+.phase-panel h4 { margin: 0 0 6px; font-family: var(--display); font-size: 18px; font-weight: 700; }
+.phase-panel p { margin: 0; font-size: 16px; }
+.more-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 900px) {
+  .filters { margin: 0 0 32px; }
+  .matrix-grid { grid-template-columns: 1fr; }
+  .gallery { grid-auto-columns: 80%; }
+  .more-two { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .phases { grid-template-columns: repeat(2, 1fr); }
+}
