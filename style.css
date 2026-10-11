@@ -157,6 +157,12 @@ h1 {
 .v-mid { text-anchor: middle; }
 @media (prefers-color-scheme: dark) { .v-hi { fill: #1b6b50; stroke: #1b6b50; } }
 .case-steps { margin: 0; display: grid; gap: 20px; }
+.doc-pages { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.doc-pages img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 3px; box-shadow: 0 6px 18px rgba(11, 74, 54, .14); }
+.mini-ledger { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.mini-ledger li { padding: 12px 12px 12px 0; }
+.ml-num { display: block; font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--label); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.ml-lab { display: block; font-family: var(--display); font-size: 13px; color: var(--muted); margin-top: 4px; }
 .case-steps dt { font-size: 14px; font-weight: 700; color: var(--label); margin-bottom: 4px; }
 .case-steps dd { margin: 0; }
 
