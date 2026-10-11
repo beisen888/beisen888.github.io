@@ -21,6 +21,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.classList.replace('no-js', 'js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script src="main.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -53,16 +58,28 @@
           <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
       </nav>
+      <button type="button" class="theme-btn" aria-label="Switch to dark mode" title="Switch light or dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>
+      </button>
     </div>
+    <div class="progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
       <div class="hero-panel">
+        <svg class="growth" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ec" stop-opacity=".18"/><stop offset="1" stop-color="#8fd0ec" stop-opacity="0"/></linearGradient></defs>
+          <path class="area" d="M0 280 L80 262 L160 270 L240 236 L320 244 L400 196 L480 206 L560 150 L640 160 L720 96 L800 60 L800 300 L0 300 Z"/>
+          <path class="line-path" d="M0 280 L80 262 L160 270 L240 236 L320 244 L400 196 L480 206 L560 150 L640 160 L720 96 L800 60"/>
+          <circle class="dot" cx="796" cy="62" r="5"/>
+        </svg>
         <div class="hero-text">
+          <p class="status"><i aria-hidden="true"></i>Open to strategy, finance, and marketing roles</p>
           <p class="hero-kicker">Tulane Freeman School of Business, Class of 2027</p>
-          <h1>Ben<br>Eisen</h1>
+          <h1><span class="line"><span>Ben</span></span><span class="line"><span>Eisen</span></span></h1>
           <p class="lede">I turn customer insight into growth strategy, and I&rsquo;m the person a team counts on to run the numbers and run the room.</p>
           <div class="actions">
             <a class="btn btn-sky" href="assets/Ben-Eisen-Resume.pdf" download>Download resume</a>
@@ -85,10 +102,10 @@
         <table class="ledger">
           <caption class="sr-only">Key figures from Ben Eisen&rsquo;s experience</caption>
           <tbody>
-            <tr><th scope="row">Chapter budget I manage each year<span>Alpha Kappa Psi, $33,500 per semester</span></th><td>$67,000</td></tr>
-            <tr><th scope="row">Scholarships I award to members each year<span>Alpha Kappa Psi, $6,000+ per semester</span></th><td>$12,000+</td></tr>
-            <tr><th scope="row">Leads converted into purchases<span>Brand Ambassador campaigns</span></th><td>400+</td></tr>
-            <tr><th scope="row">Customers engaged across campaigns<span>Brand Ambassador campaigns</span></th><td>2,500+</td></tr>
+            <tr><th scope="row">Chapter budget I manage each year<span>Alpha Kappa Psi, $33,500 per semester</span></th><td data-count="67000" data-prefix="$">$67,000</td></tr>
+            <tr><th scope="row">Scholarships I award to members each year<span>Alpha Kappa Psi, $6,000+ per semester</span></th><td data-count="12000" data-prefix="$" data-suffix="+">$12,000+</td></tr>
+            <tr><th scope="row">Leads converted into purchases<span>Brand Ambassador campaigns</span></th><td data-count="400" data-suffix="+">400+</td></tr>
+            <tr><th scope="row">Customers engaged across campaigns<span>Brand Ambassador campaigns</span></th><td data-count="2500" data-suffix="+">2,500+</td></tr>
             <tr><th scope="row">Average demo conversion rate<span>Above national benchmarks</span></th><td>10&ndash;15%</td></tr>
             <tr class="total"><th scope="row">My seat on Edoc&rsquo;s six-person Growth Team</th><td>1 of 6</td></tr>
           </tbody>
@@ -374,8 +391,9 @@
     <section class="block" id="experience">
       <div class="wrap">
         <h2 class="block-title">Experience</h2>
+        <div class="timeline">
 
-        <article class="entry">
+        <article class="entry current">
           <p class="entry-date">May 2026 &ndash; now</p>
           <div class="entry-body">
             <h3>Finance &amp; Growth Strategy Intern</h3>
@@ -416,9 +434,12 @@
           </div>
         </article>
 
-        <h2 class="block-title sub-title" id="leadership">Leadership</h2>
+        </div>
 
-        <article class="entry">
+        <h2 class="block-title sub-title" id="leadership">Leadership</h2>
+        <div class="timeline">
+
+        <article class="entry current">
           <p class="entry-date">Aug 2026 &ndash; now</p>
           <div class="entry-body">
             <h3>Vice President of Finance</h3>
@@ -444,7 +465,7 @@
           </div>
         </article>
 
-        <article class="entry">
+        <article class="entry current">
           <p class="entry-date">Mar 2024 &ndash; now</p>
           <div class="entry-body">
             <h3>Head Coach &amp; Volunteer</h3>
@@ -455,6 +476,7 @@
             </ul>
           </div>
         </article>
+        </div>
       </div>
     </section>
 
@@ -516,6 +538,7 @@
         <p>I&rsquo;m looking for internship and full-time roles in strategy, finance, and marketing. Email is the fastest way to reach me.</p>
         <div class="actions">
           <a class="btn btn-sky" href="mailto:beisen@tulane.edu">beisen@tulane.edu</a>
+          <button type="button" class="btn btn-line copy-btn" data-copy="beisen@tulane.edu">Copy email</button>
           <a class="btn btn-line" href="https://www.linkedin.com/in/ben-eisen/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn btn-line" href="assets/Ben-Eisen-Resume.pdf" download>Resume (PDF)</a>
         </div>
@@ -529,5 +552,16 @@
       <p>Built with Claude and published on GitHub Pages.</p>
     </div>
   </footer>
+  <dialog class="lightbox" aria-label="Enlarged slide">
+    <div class="lb-inner">
+      <button type="button" class="lb-close">Close</button>
+      <img src="" alt="">
+      <button type="button" class="lb-btn lb-prev" aria-label="Previous slide">&lsaquo;</button>
+      <button type="button" class="lb-btn lb-next" aria-label="Next slide">&rsaquo;</button>
+      <p class="lb-cap"></p>
+    </div>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <button type="button" class="to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
