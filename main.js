@@ -537,3 +537,131 @@
   });
   pick(0);
 })();
+
+/* ---------- Local time, share, quick search, live site stats ---------- */
+(function () {
+  'use strict';
+  var $ = function (s, e) { return (e || document).querySelector(s); };
+  var $$ = function (s, e) { return Array.prototype.slice.call((e || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var toast = function (m) {
+    var t = $('.toast'); if (!t) return;
+    t.textContent = m; t.classList.add('show');
+    clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove('show'); }, 2200);
+  };
+
+  /* Local time in New Orleans */
+  var lt = $('.lt-text');
+  if (lt && window.Intl) {
+    var tick = function () {
+      var time = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Chicago' }).format(new Date());
+      lt.textContent = 'It’s ' + time + ' in New Orleans';
+    };
+    tick(); setInterval(tick, 30000);
+  }
+
+  /* Share: native share sheet on phones, QR dialog elsewhere */
+  var shareDlg = $('.share-dlg');
+  var pageUrl = location.protocol.indexOf('http') === 0 ? location.origin + '/' : 'https://beisen888.github.io/';
+  function drawQR() {
+    var box = $('.qr', shareDlg);
+    if (box.firstChild || typeof window.qrcode !== 'function') return;
+    var qr = window.qrcode(0, 'M'); qr.addData(pageUrl); qr.make();
+    box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+  }
+  function openShare() {
+    $('.share-url input', shareDlg).value = pageUrl;
+    if (typeof window.qrcode === 'function') drawQR();
+    else {
+      var sc = document.createElement('script'); sc.src = 'assets/vendor/qrcode.js'; sc.onload = drawQR; document.head.appendChild(sc);
+    }
+    shareDlg.showModal();
+  }
+  $$('.share-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var touch = window.matchMedia('(pointer: coarse)').matches;
+      if (navigator.share && touch) {
+        navigator.share({ title: 'Ben Eisen | Strategy, Finance & Growth', url: pageUrl }).catch(function () {});
+      } else if (shareDlg && shareDlg.showModal) openShare();
+    });
+  });
+  if (shareDlg) {
+    $('.share-close', shareDlg).addEventListener('click', function () { shareDlg.close(); });
+    shareDlg.addEventListener('click', function (e) { if (e.target === shareDlg) shareDlg.close(); });
+    $('.share-copy', shareDlg).addEventListener('click', function () {
+      var inp = $('.share-url input', shareDlg);
+      (navigator.clipboard && window.isSecureContext ? navigator.clipboard.writeText(inp.value) : Promise.reject())
+        .then(function () { toast('Link copied'); }, function () { inp.select(); try { document.execCommand('copy'); toast('Link copied'); } catch (e) {} });
+    });
+  }
+
+  /* Quick search (Cmd/Ctrl + K) */
+  var dlg = $('.cmdk');
+  if (dlg && dlg.showModal) {
+    var input = $('.cmdk-input', dlg), list = $('.cmdk-list', dlg);
+    var go = function (id) { return function () { var t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }; };
+    var cmds = $$('.menu-list a').map(function (a) {
+      return { label: a.querySelector('.mi-name').textContent, hint: a.querySelector('.mi-desc').textContent, run: go(a.getAttribute('href').slice(1)) };
+    });
+    var click = function (sel) { return function () { var el = $(sel); if (el) el.click(); }; };
+    cmds = [
+      { label: 'Download resume', hint: 'PDF, one page', run: function () { var a = document.createElement('a'); a.href = 'assets/Ben-Eisen-Resume.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); } },
+      { label: 'Copy email address', hint: 'beisen@tulane.edu', run: click('.copy-btn') },
+      { label: 'Email Ben', hint: 'Opens your email app', run: function () { location.href = 'mailto:beisen@tulane.edu'; } },
+      { label: 'Open LinkedIn', hint: 'linkedin.com/in/ben-eisen', run: function () { window.open('https://www.linkedin.com/in/ben-eisen/', '_blank', 'noopener'); } },
+      { label: 'Save contact card', hint: 'Adds Ben to your contacts', run: function () { location.href = 'assets/Ben-Eisen.vcf'; } },
+      { label: 'Share this page', hint: 'QR code and link', run: function () { if (shareDlg) openShare(); } },
+      { label: 'Toggle light or dark mode', hint: 'Theme', run: click('.theme-btn') },
+      { label: 'Open the TSA case study', hint: 'Project', run: function () { go('case-tsa')(); var b = $('#case-tsa .case-toggle'); if (b && b.getAttribute('aria-expanded') !== 'true') b.click(); } },
+      { label: 'Read the Scriptus whitepaper', hint: 'PDF', run: function () { window.open('assets/work/Scriptus-Whitepaper-2026.pdf', '_blank', 'noopener'); } }
+    ].concat(cmds);
+    var shown = [], idx = 0;
+    var render = function () {
+      var q = input.value.trim().toLowerCase();
+      shown = cmds.filter(function (c) { return !q || (c.label + ' ' + c.hint).toLowerCase().indexOf(q) !== -1; });
+      idx = Math.min(idx, Math.max(0, shown.length - 1));
+      list.innerHTML = shown.length ? shown.map(function (c, i) {
+        return '<li role="option" id="cmd-' + i + '" aria-selected="' + (i === idx) + '"><span>' + c.label + '</span><small>' + c.hint + '</small></li>';
+      }).join('') : '<li class="empty">No matches. Try “projects” or “resume”.</li>';
+      input.setAttribute('aria-activedescendant', shown.length ? 'cmd-' + idx : '');
+      var cur = list.children[idx]; if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest' });
+    };
+    var run = function (i) { var c = shown[i]; if (!c) return; dlg.close(); setTimeout(c.run, 30); };
+    var open = function () { input.value = ''; idx = 0; render(); dlg.showModal(); input.focus(); };
+    input.addEventListener('input', function () { idx = 0; render(); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); idx = (idx + 1) % Math.max(1, shown.length); render(); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); idx = (idx - 1 + shown.length) % Math.max(1, shown.length); render(); }
+      if (e.key === 'Enter') { e.preventDefault(); run(idx); }
+    });
+    list.addEventListener('click', function (e) {
+      var li = e.target.closest('li[role="option"]'); if (li) run(parseInt(li.id.slice(4), 10));
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (dlg.open) dlg.close(); else open(); }
+    });
+    var kb = $('.cmdk-btn'); if (kb) kb.addEventListener('click', open);
+    if (!/Mac|iPhone|iPad/.test(navigator.platform || '') && kb) kb.querySelector('kbd').textContent = 'Ctrl K';
+  }
+
+  /* Live site stats from GitHub */
+  var cEl = $('.cs-commits'), uEl = $('.cs-updated');
+  if (cEl && window.fetch && location.protocol.indexOf('http') === 0) {
+    fetch('https://api.github.com/repos/beisen888/beisen888.github.io/commits?per_page=1', { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        var link = r.headers.get('Link') || '';
+        var m = link.match(/page=(\d+)>; rel="last"/);
+        if (m) cEl.textContent = m[1];
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data || !data[0]) return;
+        var d = new Date(data[0].commit.committer.date);
+        var days = Math.floor((Date.now() - d) / 864e5);
+        uEl.textContent = days <= 0 ? 'Today' : days === 1 ? 'Yesterday' : days < 30 ? days + ' days ago' : d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      })
+      .catch(function () {});
+  }
+})();
