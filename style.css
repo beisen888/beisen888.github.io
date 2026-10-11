@@ -143,6 +143,8 @@ h1 {
 .case h3 { margin: 0 0 14px; font-size: 30px; font-weight: 800; font-stretch: 112%; line-height: 1.1; letter-spacing: -.015em; }
 .case-sum { margin: 0 0 18px; }
 .case-role { margin: 0; font-size: 16px; color: var(--muted); }
+.case-link { margin: 18px 0 0; font-family: var(--display); font-weight: 700; font-size: 16px; }
+.case-link a { color: var(--label); text-decoration-thickness: 2px; }
 .case-role strong { color: var(--ink); font-family: var(--display); font-weight: 600; }
 .case-visual { margin: 0 0 28px; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 20px; }
 .case-visual svg { width: 100%; height: auto; display: block; }
