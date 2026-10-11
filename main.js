@@ -269,4 +269,54 @@
       }
     });
   });
+
+  /* ---------- Advice drop box ----------
+     If data-endpoint is set (for example a Formspree form URL), notes are sent there.
+     Otherwise the note opens in the visitor's email app, addressed to Ben. */
+  var form = $('.advice-form');
+  if (form) {
+    var ta = $('textarea', form), countEl = $('.count b', form), msg = $('.form-msg', form);
+    var btn = $('button[type="submit"]', form);
+    var thanksBox = $('.advice-thanks', form), thanksText = $('.advice-thanks p', form);
+    ta.addEventListener('input', function () {
+      countEl.textContent = ta.value.length;
+      ta.closest('.field').classList.remove('invalid');
+    });
+    var thanks = function (viaEmail) {
+      thanksText.textContent = viaEmail
+        ? 'Your email app should open with your note ready to send. If it doesn\u2019t, email me at beisen@tulane.edu.'
+        : 'Your advice is on its way to me. I really appreciate it.';
+      form.classList.add('sent');
+      thanksBox.hidden = false;
+      $('h3', thanksBox).focus();
+    };
+    $('.again', form).addEventListener('click', function () {
+      form.reset(); countEl.textContent = '0'; msg.textContent = ''; btn.disabled = false;
+      form.classList.remove('sent'); thanksBox.hidden = true; ta.focus();
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form._gotcha && form._gotcha.value) return;
+      var advice = ta.value.trim();
+      if (advice.length < 5) {
+        ta.closest('.field').classList.add('invalid');
+        msg.className = 'form-msg err'; msg.textContent = 'Write a few words of advice first.';
+        ta.focus(); return;
+      }
+      var name = form.name.value.trim(), role = form.role.value.trim();
+      var endpoint = form.dataset.endpoint;
+      if (!endpoint) {
+        var body = advice + '\n\n' + (name ? '- ' + name : '') + (role ? ', ' + role : '');
+        window.location.href = 'mailto:beisen@tulane.edu?subject=' + encodeURIComponent('Advice for Ben') + '&body=' + encodeURIComponent(body);
+        thanks(true); return;
+      }
+      btn.disabled = true; msg.className = 'form-msg'; msg.textContent = 'Sending\u2026';
+      fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (r) { if (!r.ok) throw new Error(); thanks(false); })
+        .catch(function () {
+          btn.disabled = false; msg.className = 'form-msg err';
+          msg.textContent = 'That didn\u2019t send. Try again, or email beisen@tulane.edu.';
+        });
+    });
+  }
 })();
