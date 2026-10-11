@@ -753,7 +753,8 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
   body { font-size: 11pt; background: #fff; color: #000; }
   .nav, .ticker, .creds, .rail, .to-top, .toast, .growth, .status, .actions, .filters, .case-toggle, .matrix, .roadmap,
   .gallery, .doc-pages, .case-visual, .stock, #trajectory, #how-i-work, .advice, #interests, .colophon, .contact-extras,
-  .skills-layout .radar, .theme-btn, .menu-btn, .cmdk-btn, dialog, .kpis, .case-link, .skip { display: none !important; }
+  .skills-layout .radar, .theme-btn, .menu-btn, .cmdk-btn, dialog, .kpis, .case-link, .skip,
+  #projects, .ledger-section, .now-title, .now { display: none !important; }
   .hero { display: block; background: #fff; color: #000; min-height: 0; max-height: none; }
   .hero-photo { display: none; }
   .hero-panel { padding: 0 0 12pt; }
