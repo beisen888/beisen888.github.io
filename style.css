@@ -509,3 +509,12 @@ h1 {
 .advice-form.sent > :not(.advice-thanks) { display: none; }
 .advice-thanks h3:focus { outline: none; }
 .advice .split .block-title { margin-bottom: 20px; }
+
+/* ============ How I work ============ */
+.principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.principle { border-top: 4px solid var(--label); padding-top: 22px; display: flex; flex-direction: column; }
+.principle h3 { margin: 0 0 14px; font-family: var(--display); font-size: 26px; font-weight: 800; font-stretch: 112%; line-height: 1.12; letter-spacing: -.015em; }
+.principle p { margin: 0 0 18px; flex: 1; }
+.principle a { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--label); text-decoration-thickness: 2px; }
+.principle:nth-child(2) { transition-delay: .1s; } .principle:nth-child(3) { transition-delay: .2s; }
+@media (max-width: 900px) { .principles { grid-template-columns: 1fr; gap: 36px; } }
