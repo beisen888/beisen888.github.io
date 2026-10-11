@@ -1,3 +1,5 @@
+/* Ben Eisen portfolio, build 2026-10-11c */
+console.log('%cHey, you opened the console.%c\nI built this site with Claude as my AI partner. If you like what you see: beisen@tulane.edu', 'font: 700 16px sans-serif; color: #0b4a36', 'font: 13px sans-serif');
 /* Ben Eisen portfolio: interactive layer.
    Everything here is progressive: the page reads fine without it. */
 (function () {
@@ -672,9 +674,17 @@
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var q = document.querySelector('.quick');
-  if (q && q.showModal) {
+  if (q && !q.showModal) {
     Array.prototype.forEach.call(document.querySelectorAll('.quick-open'), function (b) {
-      b.addEventListener('click', function () { var m = document.querySelector('.site-menu'); if (m && m.open) m.close(); q.showModal(); });
+      b.addEventListener('click', function () { location.href = 'assets/Ben-Eisen-Resume.pdf'; });
+    });
+  }
+  if (q && q.showModal) {
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.quick-open');
+      if (!b) return;
+      var m = document.querySelector('.site-menu'); if (m && m.open) m.close();
+      if (!q.open) q.showModal();
     });
     q.querySelector('.quick-close').addEventListener('click', function () { q.close(); });
     q.addEventListener('click', function (e) { if (e.target === q) q.close(); });
