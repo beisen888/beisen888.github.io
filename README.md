@@ -1,6 +1,8 @@
-# Ben Eisen — Portfolio
+# Ben Eisen: Portfolio
 
-Personal portfolio site for Ben Eisen, Tulane A.B. Freeman School of Business, Class of 2027.
+**Live site: https://beisen888.github.io**
+
+Personal portfolio for Ben Eisen, Tulane A.B. Freeman School of Business, Class of 2027.
 
 Built with plain HTML and CSS (no framework) and published with GitHub Pages. Built with Claude as an AI coding assistant.
 
