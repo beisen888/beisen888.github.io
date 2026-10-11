@@ -169,6 +169,56 @@
       </div>
     </section>
 
+    <!-- $BEN chart -->
+    <section class="block" id="trajectory">
+      <div class="wrap">
+        <div class="split">
+          <h2 class="block-title">The $BEN chart</h2>
+          <p class="block-intro">My path since 2023, plotted like a stock. Every point is a milestone. Tap a point or pick a year to see what happened.</p>
+        </div>
+        <div class="stock">
+          <div class="stock-head">
+            <div class="quote">
+              <span class="q-sym">$BEN</span>
+              <span class="q-price" aria-live="polite">Since 2023</span>
+              <span class="q-chg"><i aria-hidden="true">&#9650;</i> <span class="q-chg-text">11 milestones</span></span>
+            </div>
+            <div class="ranges" role="group" aria-label="Choose a year">
+              <button type="button" class="range" aria-pressed="true" data-range="all">All</button>
+              <button type="button" class="range" aria-pressed="false" data-range="2023">2023</button>
+              <button type="button" class="range" aria-pressed="false" data-range="2024">2024</button>
+              <button type="button" class="range" aria-pressed="false" data-range="2025">2025</button>
+              <button type="button" class="range" aria-pressed="false" data-range="2026">2026</button>
+              <button type="button" class="range" aria-pressed="false" data-range="2027">2027</button>
+            </div>
+          </div>
+          <div class="stock-plot">
+            <svg class="stock-svg" viewBox="0 0 1000 340" preserveAspectRatio="none" role="img" aria-label="Line chart of Ben's milestones from 2023 to 2027, rising steadily"></svg>
+            <div class="stock-tip" hidden></div>
+          </div>
+          <div class="stock-detail" aria-live="polite">
+            <p class="sd-date"></p>
+            <h3 class="sd-title"></h3>
+            <p class="sd-body"></p>
+          </div>
+          <ol class="milestones" aria-label="Milestones">
+            <li data-x="2023.62" data-v="12"><button type="button"><time>Aug 2023</time><b>Joined Alpha Kappa Psi</b></button><p>Selected among the top 5% of applicants for leadership potential and completed professional development training.</p></li>
+            <li data-x="2024.18" data-v="20"><button type="button"><time>Mar 2024</time><b>Head coach, Special Olympics</b></button><p>Started leading practices for about 30 athletes, and later recruited 20+ student volunteers for a chapter ESPN ranked Top 5 nationally.</p></li>
+            <li data-x="2024.3" data-v="24"><button type="button"><time>Spring 2024</time><b>Joined Alpha Epsilon Pi</b></button><p>Became a brother of AEPi.</p></li>
+            <li data-x="2024.62" data-v="34"><button type="button"><time>Aug 2024</time><b>Elected Warden</b></button><p>Elected to the AKPsi officer board as a sophomore, addressing the chapter weekly alongside the President.</p></li>
+            <li data-x="2025.25" data-v="42"><button type="button"><time>Spring 2025</time><b>Ran honor courts</b></button><p>Conducted 70+ structured interviews and finished the process 30 minutes faster than usual.</p></li>
+            <li data-x="2025.42" data-v="52"><button type="button"><time>Summer 2025</time><b>Brand Ambassador</b></button><p>Represented nine national brands, converted 400+ leads, and beat national demo benchmarks with 10&ndash;15% conversion.</p></li>
+            <li data-x="2025.7" data-v="58"><button type="button"><time>Fall 2025</time><b>Studied in Barcelona</b></button><p>International business and psychology coursework at ESCI-UPF.</p></li>
+            <li data-x="2026.37" data-v="72"><button type="button"><time>May 2026</time><b>Edoc Growth Team</b></button><p>Selected as 1 of 6 on the Growth Team, working directly with the CEO and President on Scriptus.</p></li>
+            <li data-x="2026.62" data-v="84"><button type="button"><time>Aug 2026</time><b>VP of Finance</b></button><p>Took over a $67,000 annual budget and $12,000+ in yearly scholarships for a 161-member chapter.</p></li>
+            <li data-x="2026.78" data-v="92"><button type="button"><time>Fall 2026</time><b>TSA and Qualico cases</b></button><p>Presented the TSA SPOT recommendation and the Qualico capstone, and shipped the rebuilt Scriptus whitepaper.</p></li>
+            <li data-x="2027.38" data-v="104" data-future="1"><button type="button"><time>May 2027</time><b>Graduating from Tulane</b></button><p>B.S. in Management from the A.B. Freeman School of Business. Next: a strategy, finance, or marketing role.</p></li>
+          </ol>
+          <p class="stock-note">Not to scale. Just up and to the right. The dashed segment is a projection.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects -->
     <section class="block block-tint" id="projects">
       <div class="wrap">
@@ -541,12 +591,20 @@
     <section class="block" id="skills">
       <div class="wrap">
         <h2 class="block-title">Skills</h2>
-        <dl class="skills">
+        <div class="skills-layout">
+          <figure class="radar reveal">
+            <svg class="radar-svg" viewBox="-50 0 500 380" role="img" aria-label="Radar chart of strengths: strategy and leadership highest, then communication, marketing, finance, and research"><polygon class="rd-ring" points="200.0,164.0 222.5,177.0 222.5,203.0 200.0,216.0 177.5,203.0 177.5,177.0"/><polygon class="rd-ring" points="200.0,138.0 245.0,164.0 245.0,216.0 200.0,242.0 155.0,216.0 155.0,164.0"/><polygon class="rd-ring" points="200.0,112.0 267.5,151.0 267.5,229.0 200.0,268.0 132.5,229.0 132.5,151.0"/><polygon class="rd-ring" points="200.0,86.0 290.1,138.0 290.1,242.0 200.0,294.0 109.9,242.0 109.9,138.0"/><polygon class="rd-ring" points="200.0,60.0 312.6,125.0 312.6,255.0 200.0,320.0 87.4,255.0 87.4,125.0"/><line class="rd-spoke" x1="200" y1="190" x2="200.0" y2="60.0"/><line class="rd-spoke" x1="200" y1="190" x2="312.6" y2="125.0"/><line class="rd-spoke" x1="200" y1="190" x2="312.6" y2="255.0"/><line class="rd-spoke" x1="200" y1="190" x2="200.0" y2="320.0"/><line class="rd-spoke" x1="200" y1="190" x2="87.4" y2="255.0"/><line class="rd-spoke" x1="200" y1="190" x2="87.4" y2="125.0"/><g class="rd-shape-g"><polygon class="rd-shape" points="200.0,60.0 312.6,125.0 301.3,248.5 200.0,294.0 109.9,242.0 109.9,138.0"/><circle class="rd-dot" data-i="0" cx="200.0" cy="60.0" r="5"/><circle class="rd-dot" data-i="1" cx="312.6" cy="125.0" r="5"/><circle class="rd-dot" data-i="2" cx="301.3" cy="248.5" r="5"/><circle class="rd-dot" data-i="3" cx="200.0" cy="294.0" r="5"/><circle class="rd-dot" data-i="4" cx="109.9" cy="242.0" r="5"/><circle class="rd-dot" data-i="5" cx="109.9" cy="138.0" r="5"/></g><text class="rd-label" data-i="0" x="200.0" y="37.0" text-anchor="middle">Strategy</text><text class="rd-label" data-i="1" x="336.8" y="116.0" text-anchor="start">Leadership</text><text class="rd-label" data-i="2" x="336.8" y="274.0" text-anchor="start">Communication</text><text class="rd-label" data-i="3" x="200.0" y="353.0" text-anchor="middle">Marketing</text><text class="rd-label" data-i="4" x="63.2" y="274.0" text-anchor="end">Finance</text><text class="rd-label" data-i="5" x="63.2" y="116.0" text-anchor="end">Research</text></svg>
+            <figcaption>Where my work concentrates. Pick a strength to see the proof.</figcaption>
+            <ul class="radar-keys"><li><button type="button" data-i="0" aria-pressed="true"><span>Strategy</span><b>5<small>/5</small></b></button><p>Built the TSA decision matrix, diagnosed Qualico&rsquo;s structure problem, and ran the Amerisafe Five Forces.</p></li><li><button type="button" data-i="1" aria-pressed="false"><span>Leadership</span><b>5<small>/5</small></b></button><p>VP of Finance on an 8-person executive committee, former Warden, and head coach for about 30 athletes.</p></li><li><button type="button" data-i="2" aria-pressed="false"><span>Communication</span><b>4.5<small>/5</small></b></button><p>Weekly financial briefings to a 161-member chapter, client check-in calls at Edoc, and case presentations.</p></li><li><button type="button" data-i="3" aria-pressed="false"><span>Marketing</span><b>4<small>/5</small></b></button><p>Scriptus go-to-market, Toronto Huskies segmentation, and 400+ leads converted as a brand ambassador.</p></li><li><button type="button" data-i="4" aria-pressed="false"><span>Finance</span><b>4<small>/5</small></b></button><p>A $67,000 annual budget, $12,000+ in scholarships, and the TSA lane-cost financials.</p></li><li><button type="button" data-i="5" aria-pressed="false"><span>Research</span><b>4<small>/5</small></b></button><p>A 25-source whitepaper, a 22-account target workbook, and PESTEL scans.</p></li></ul>
+            <p class="radar-proof" aria-live="polite">Built the TSA decision matrix, diagnosed Qualico&rsquo;s structure problem, and ran the Amerisafe Five Forces.</p>
+          </figure>
+          <dl class="skills">
           <div><dt>Certifications</dt><dd>AI Literacy Certificate (Tulane), HubSpot Academy, Microsoft Excel</dd></div>
           <div><dt>Tools</dt><dd>HubSpot CRM, Asana, Claude, ChatGPT, Microsoft Office, Google Workspace, Canva, web design</dd></div>
           <div><dt>Strengths</dt><dd>Market research, data analysis, budgeting, customer journey mapping, public speaking</dd></div>
           <div><dt>Associations</dt><dd>Alpha Epsilon Pi, brother since spring 2024</dd></div>
         </dl>
+        </div>
       </div>
     </section>
 
