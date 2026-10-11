@@ -192,6 +192,12 @@ h1 {
 .skills dt { font-weight: 700; font-size: 16px; color: var(--label); }
 .skills dd { margin: 0; max-width: 70ch; }
 
+/* ============ Off the clock ============ */
+.interests { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; }
+.interests li { padding: 22px 0 26px; border-top: 2px solid var(--ink); }
+.interests h3 { margin: 0 0 6px; font-size: 21px; font-weight: 800; font-stretch: 112%; line-height: 1.15; letter-spacing: -.01em; color: var(--label); }
+.interests p { margin: 0; font-size: 16px; color: var(--muted); }
+
 /* ============ Contact + footer ============ */
 .contact { background: var(--green); color: #fff; padding: 112px 0; }
 .contact h2 {
@@ -212,6 +218,8 @@ h1 {
   .split .block-title { margin-bottom: 0; }
   .block-intro { margin-bottom: 32px; }
   .more-list { grid-template-columns: 1fr; gap: 28px; }
+  .interests { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+  .now div { grid-template-columns: 100px minmax(0, 1fr); }
   .entry, .skills div { grid-template-columns: 1fr; gap: 6px; }
   .block, .ledger-section { padding: 64px 0; }
   .block-title, .ledger-intro h2 { font-size: 32px; }
