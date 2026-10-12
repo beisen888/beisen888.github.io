@@ -229,9 +229,6 @@ h1 {
 
 /* ============ Responsive ============ */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: 0; max-height: none; }
-  .hero-photo { order: -1; height: 62vw; max-height: 460px; }
-  .hero-panel { padding: 40px 24px 48px; }
   .ledger-grid, .split, .case, .edu { grid-template-columns: 1fr; gap: 24px; }
   .split .block-title { margin-bottom: 0; }
   .block-intro { margin-bottom: 32px; }
@@ -250,7 +247,6 @@ h1 {
 @media (max-width: 480px) {
   body { font-size: 17px; }
   .wrap { padding: 0 16px; }
-  .hero-panel { padding: 32px 16px 40px; }
   .ledger th { font-size: 16px; }
   .case h3 { font-size: 26px; }
   .case-visual { padding: 12px; }
@@ -850,3 +846,41 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .case-visual { transition: transform .35s ease, box-shadow .35s ease; }
 .case:hover .case-visual { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(11,74,54,.12); }
 @media (max-width: 760px) { .quick-close { position: sticky; top: 0; float: right; margin: -8px -6px 0 0; background: var(--surface); border-radius: 50%; width: 40px; height: 40px; z-index: 1; } }
+
+/* ============ Mobile hero: profile-card layout ============ */
+@media (max-width: 900px) {
+  .hero {
+    display: grid; position: relative; overflow: hidden; min-height: 0; max-height: none;
+    grid-template-columns: minmax(0, 1fr) minmax(118px, 36%);
+    grid-template-areas: "status photo" "kicker photo" "name name" "lede lede" "actions actions";
+    column-gap: 16px; padding: 28px 24px 56px; align-content: start;
+  }
+  .hero-panel, .hero-text { display: contents; }
+  .hero-panel::before { display: none; }
+  .hero .status { grid-area: status; align-self: end; margin: 0 0 12px; font-size: 13px; padding: 6px 12px 6px 10px; justify-self: start; }
+  .hero .hero-kicker { grid-area: kicker; align-self: start; margin: 0; font-size: 15px; line-height: 1.35; }
+  .hero-photo {
+    grid-area: photo; align-self: start; width: 100%; aspect-ratio: 4 / 5; height: auto;
+    border-radius: 14px; overflow: hidden; box-shadow: 0 0 0 2px rgba(143,208,236,.55), 0 14px 30px rgba(0,0,0,.28);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+  .hero:hover .hero-photo img { transform: none; }
+  .hero h1 { grid-area: name; margin: 26px 0 18px; font-size: clamp(64px, 19vw, 132px); line-height: .84; }
+  .hero .lede { grid-area: lede; max-width: 34ch; margin: 0 0 26px; font-size: 19px; }
+  .hero .actions { grid-area: actions; position: relative; z-index: 1; }
+  .hero .actions .btn { flex: 1 1 auto; text-align: center; }
+  .growth { height: 30%; }
+}
+@media (max-width: 400px) {
+  .hero { padding: 22px 16px 48px; column-gap: 12px; }
+  .hero .status { font-size: 12px; }
+  .hero .hero-kicker { font-size: 14px; }
+}
+.st-short { display: none; }
+@media (max-width: 900px) { .st-long { display: none; } .st-short { display: inline; } }
+@media (max-width: 600px) {
+  .lb-btn { display: none; }
+  .lb-cap { font-size: 14px; padding: 0 8px; }
+  .lb-cap::after { content: "Swipe for the next slide"; display: block; margin-top: 6px; font-size: 12px; color: var(--sky); }
+  .lightbox { max-width: 96vw; }
+}

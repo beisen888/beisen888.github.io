@@ -264,6 +264,13 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
       if (e.key === 'ArrowRight') show(idx + 1);
       if (e.key === 'ArrowLeft') show(idx - 1);
     });
+    var sx = null;
+    dlg.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    dlg.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
   } else {
     $$('.zoom').forEach(function (z) {
       z.addEventListener('click', function () { window.open(z.dataset.src, '_blank'); });
@@ -696,11 +703,16 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
   }
   var dock = document.querySelector('.dock'), hero = document.querySelector('.hero');
   if (dock && hero) {
+    var lastY = window.scrollY, hidden = false, small = window.matchMedia('(max-width: 900px)');
     var check = function () {
+      var y = window.scrollY;
       var past = hero.getBoundingClientRect().bottom < 0;
       var contact = document.getElementById('contact');
       var atContact = contact && contact.getBoundingClientRect().top < window.innerHeight * 0.6;
-      dock.classList.toggle('show', past && !atContact);
+      // On phones, tuck the dock away while scrolling down so it never covers content
+      if (small.matches && Math.abs(y - lastY) > 6) { hidden = y > lastY; lastY = y; }
+      if (!small.matches) hidden = false;
+      dock.classList.toggle('show', past && !atContact && !hidden);
     };
     window.addEventListener('scroll', check, { passive: true }); check();
     dock.querySelector('.dock-top').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
