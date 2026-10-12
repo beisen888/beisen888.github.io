@@ -623,7 +623,7 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
       { label: 'Share this page', hint: 'QR code and link', run: function () { if (shareDlg) openShare(); } },
       { label: 'Toggle light or dark mode', hint: 'Theme', run: click('.theme-btn') },
       { label: 'Open the TSA case study', hint: 'Project', run: function () { go('case-tsa')(); var b = $('#case-tsa .case-toggle'); if (b && b.getAttribute('aria-expanded') !== 'true') b.click(); } },
-      { label: 'Read the Scriptus whitepaper', hint: 'PDF', run: function () { window.open('assets/work/Scriptus-Whitepaper-2026.pdf', '_blank', 'noopener'); } }
+      { label: 'See the Scriptus case study', hint: 'Project', run: function () { var t = document.getElementById('case-scriptus'); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); } }
     ].concat(cmds);
     var shown = [], idx = 0;
     var render = function () {
