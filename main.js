@@ -614,6 +614,7 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
     });
     var click = function (sel) { return function () { var el = $(sel); if (el) el.click(); }; };
     cmds = [
+      { label: 'Ask about Ben', hint: 'Questions about his fit, answered', run: function () { if (window.askBen) window.askBen(); } },
       { label: 'Ben in 30 seconds', hint: 'Quick summary for recruiters', run: function () { var q = document.querySelector('.quick'); if (q && q.showModal) q.showModal(); } },
       { label: 'Download resume', hint: 'PDF, one page', run: function () { var a = document.createElement('a'); a.href = 'assets/Ben-Eisen-Resume.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); } },
       { label: 'Copy email address', hint: 'beisen@tulane.edu', run: click('.copy-btn') },
