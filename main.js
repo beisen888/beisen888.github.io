@@ -696,10 +696,12 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
     });
     q.querySelector('.quick-close').addEventListener('click', function () { q.close(); });
     q.addEventListener('click', function (e) { if (e.target === q) q.close(); });
-    q.querySelector('.quick-more').addEventListener('click', function () {
-      q.close();
-      var t = document.getElementById(this.dataset.go);
-      if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    Array.prototype.forEach.call(q.querySelectorAll('.quick-more'), function (btn) {
+      btn.addEventListener('click', function () {
+        q.close();
+        var t = document.getElementById(btn.dataset.go);
+        if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+      });
     });
   }
   var dock = document.querySelector('.dock'), hero = document.querySelector('.hero');

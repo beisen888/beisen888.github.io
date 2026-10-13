@@ -972,3 +972,11 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .build-steps b { font-family: var(--display); font-size: 15px; }
 .build-steps span { font-size: 15px; color: var(--muted); line-height: 1.45; }
 @media (max-width: 480px) { .build-steps li { grid-template-columns: 1fr; } .build-steps time { grid-row: auto; } }
+.quick-links { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline; }
+.quick-advice { color: var(--muted) !important; font-weight: 600 !important; }
+.quick-advice:hover { color: var(--label) !important; }
+.ask-all { flex: none; font-family: var(--display); font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; padding: 7px 12px; border-radius: 999px; border: 1.5px dashed var(--label); background: transparent; color: var(--label); }
+.msg .q-list { display: grid; gap: 6px; margin-top: 8px; }
+.msg .q-list button { text-align: left; font-family: var(--display); font-size: 13px; font-weight: 600; cursor: pointer; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); }
+.msg .q-list button:hover { border-color: var(--label); color: var(--label); }
+.msg .q-group { font-family: var(--display); font-size: 12px; font-weight: 700; color: var(--label); margin: 10px 0 2px; }

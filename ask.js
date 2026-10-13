@@ -55,7 +55,7 @@
     },
     {
       id: 'marketing', q: 'Is Ben a fit for marketing?',
-      kw: ['marketing', 'brand', 'growth', 'gtm', 'go-to-market', 'go to market', 'campaign', 'sales', 'social', 'customer', 'advertis'],
+      kw: ['marketing', 'brand', 'growth', 'gtm', 'go-to-market', 'go to market', 'campaign', 'social', 'customer', 'advertis'],
       a: '<p>Very much. Marketing is one of his two majors, and he&rsquo;s done it for real:</p>' +
         '<ul><li><b>B2B go-to-market</b> at Edoc: rebuilt the Scriptus whitepaper for hospice leaders and built the target-account research behind the campaign.</li>' +
         '<li><b>Consumer strategy:</b> segmented fans and built two flagship campaigns for the Toronto Huskies NFL expansion project.</li>' +
@@ -89,7 +89,7 @@
     },
     {
       id: 'leadership', q: 'What leadership experience does he have?',
-      kw: ['lead', 'leader', 'leadership', 'manage people', 'officer', 'president', 'coach', 'captain', 'mentor', 'akpsi', 'alpha kappa', 'fraternity'],
+      kw: ['lead', 'leader', 'leadership', 'manage people', 'officer', 'president', 'coach', 'captain', 'akpsi', 'alpha kappa', 'fraternity'],
       a: '<ul><li><b>VP of Finance, Alpha Kappa Psi:</b> one of 8 on the executive committee of a 161-member pre-professional business fraternity; mentors the finance branch.</li>' +
         '<li><b>Warden:</b> elected to the officer board as a sophomore; led the member standards process (70+ interviews).</li>' +
         '<li><b>Head Coach, Tulane Special Olympics:</b> leads practices for about 30 athletes and recruited 20+ volunteers for an ESPN Top 5 chapter.</li></ul>' +
@@ -210,6 +210,44 @@
       next: ['leadership', 'team', 'origin']
     },
     {
+      id: 'different', q: 'What makes him different from other candidates?',
+      kw: ['different', 'unique', 'stand out from', 'compared to', 'other candidates', 'edge', 'special about', 'set him apart'],
+      a: '<p>Three things you don&rsquo;t usually see together in a new grad:</p>' +
+        '<ul><li><b>Executive exposure already.</b> He works directly with Edoc&rsquo;s CEO and President on a six-person Growth Team.</li>' +
+        '<li><b>A builder&rsquo;s instinct.</b> He&rsquo;s been selling and pitching since he was a kid, and he built this whole site with AI as his partner.</li>' +
+        '<li><b>People-first and numbers-fluent.</b> Psychology plus Management and Marketing: he can run a budget and read a room.</li></ul>' +
+        see([['case-site', 'How he built this site'], ['case-scriptus', 'Edoc work']]),
+      next: ['why', 'origin', 'ai']
+    },
+    {
+      id: 'speaking', q: 'Is he a strong presenter?',
+      kw: ['present', 'presentation', 'public speaking', 'speak', 'pitch', 'communicat', 'in front of', 'client facing', 'client-facing'],
+      a: '<p>Yes, and he gets regular practice:</p>' +
+        '<ul><li>Delivers <b>weekly financial briefings</b> to a 161-member chapter as VP of Finance.</li>' +
+        '<li>Presented the &ldquo;why it works,&rdquo; implementation, and financials on the <b>TSA case</b>, and owned three sections of the <b>Qualico</b> capstone.</li>' +
+        '<li>Pitched <b>2,500+ customers</b> live as a brand ambassador, converting 400+ of them.</li>' +
+        '<li>Runs personalized <b>client check-in calls</b> at Edoc.</li></ul>' +
+        see([['case-tsa', 'TSA case']]),
+      next: ['consulting', 'leadership', 'sales']
+    },
+    {
+      id: 'sales', q: 'Does he have sales experience?',
+      kw: ['sales experience', 'sales', 'sell', 'selling', 'revenue', 'business development', 'bizdev', 'account executive', 'sdr', 'bdr', 'quota', 'lead gen'],
+      a: '<p>Real, measurable sales experience:</p>' +
+        '<ul><li><b>400+ leads converted</b> into purchases for nine national food and wellness brands.</li>' +
+        '<li><b>10&ndash;15% conversion</b>, above national demo benchmarks.</li>' +
+        '<li>At Edoc, he builds <b>client acquisition and retention</b> campaigns and researched 20+ target accounts for outreach.</li></ul>' +
+        '<p>And it started early: reselling sneakers and trading cards as a kid.</p>',
+      next: ['marketing', 'speaking', 'origin']
+    },
+    {
+      id: 'advice', q: 'Can I give Ben some advice?',
+      kw: ['advice', 'mentor', 'tip', 'recommend', 'suggest', 'wisdom', 'lesson'],
+      a: '<p>He&rsquo;d love that. Ben is a senior and a constant learner, and he reads every note.</p>' +
+        '<p>Use the <a href="#advice" data-jump="advice">Teach me something</a> box. It goes straight to his inbox, and your name is optional.</p>',
+      next: ['contact', 'roles', 'culture']
+    },
+    {
       id: 'interests', q: 'What does Ben do for fun?',
       kw: ['fun', 'hobby', 'hobbies', 'interest', 'outside of work', 'free time', 'sports', 'weekend', 'personal'],
       a: '<p>He follows Manchester United and every Chicago team (Bears, Cubs, Bulls), lifts, skis whenever he can, and cooks. He&rsquo;s also an Alpha Epsilon Pi brother.</p>' +
@@ -219,15 +257,35 @@
   ];
   var byId = {}; KB.forEach(function (k) { byId[k.id] = k; });
   var ROLES = [['Consulting', 'consulting'], ['Finance', 'finance'], ['Marketing', 'marketing'], ['Strategy / Ops', 'strategy']];
-  var START = ['why', 'consulting', 'culture', 'challenge', 'serve', 'roles'];
+  var START = ['why', 'different', 'consulting', 'culture', 'challenge', 'serve'];
 
   function scroll() { log.scrollTop = log.scrollHeight; }
   function add(cls, html) {
     var d = document.createElement('div');
     d.className = 'msg ' + cls; d.innerHTML = html; log.appendChild(d); scroll(); return d;
   }
+  var GROUPS = [
+    ['Fit and hiring', ['why', 'different', 'consulting', 'finance', 'marketing', 'strategy', 'sales', 'roles', 'location']],
+    ['Experience', ['edoc', 'leadership', 'speaking', 'accomplish', 'ai', 'skills', 'education']],
+    ['Who he is', ['culture', 'team', 'future', 'challenge', 'origin', 'serve', 'interests']],
+    ['Get in touch', ['contact', 'advice']]
+  ];
+  function showAll() {
+    var html = '<p>Here&rsquo;s everything you can ask me:</p>' + GROUPS.map(function (g) {
+      return '<p class="q-group">' + g[0] + '</p><div class="q-list">' + g[1].filter(function (id) { return byId[id]; }).map(function (id) {
+        return '<button type="button" data-q="' + id + '">' + byId[id].q + '</button>';
+      }).join('') + '</div>';
+    }).join('');
+    var m = add('bot', html);
+    m.querySelectorAll('[data-q]').forEach(function (b) { b.addEventListener('click', function () { ask(byId[b.dataset.q].q, b.dataset.q); }); });
+    log.scrollTop = m.offsetTop - 12;
+  }
   function chips(ids) {
     chipsBox.innerHTML = '';
+    var all = document.createElement('button');
+    all.type = 'button'; all.className = 'ask-all'; all.textContent = 'See all questions';
+    all.addEventListener('click', function () { if (!busy) showAll(); });
+    chipsBox.appendChild(all);
     ids.forEach(function (id) {
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'ask-chip'; b.textContent = byId[id].q;
@@ -250,7 +308,7 @@
         busy = false; return;
       } else {
         add('bot', '<p>I don&rsquo;t have a solid answer to &ldquo;' + escapeHtml(fallbackQ) + '&rdquo; from Ben&rsquo;s site, and I&rsquo;d rather not guess. Ben can answer it directly: <a href="mailto:beisen@tulane.edu">beisen@tulane.edu</a>.</p><p>Or try one of these:</p>');
-        chips(['why', 'roles', 'consulting']);
+        chips(['why', 'roles', 'advice']);
       }
       scroll(); busy = false;
     }, reduce ? 150 : 650 + Math.random() * 400);
