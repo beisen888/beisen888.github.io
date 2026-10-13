@@ -130,7 +130,7 @@
     {
       id: 'roles', q: 'What roles is Ben looking for?',
       kw: ['looking for', 'roles', 'role', 'position', 'opportunit', 'full-time', 'full time', 'available', 'start date', 'when can', 'graduat', 'internship', 'job'],
-      a: '<p>Internship and full-time roles in <b>strategy, finance, and marketing</b>. He graduates from Tulane&rsquo;s A.B. Freeman School of Business in <b>May 2027</b>.</p>' +
+      a: '<p><b>Full-time roles</b> in <b>strategy, finance, and marketing</b>, starting after he graduates from Tulane&rsquo;s A.B. Freeman School of Business in <b>May 2027</b>. He isn&rsquo;t looking for internships.</p>' +
         '<p>For timing, location, or a specific opening, the fastest answer is an email: <a href="mailto:beisen@tulane.edu">beisen@tulane.edu</a>.</p>',
       next: ['location', 'contact', 'why']
     },
