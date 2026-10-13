@@ -78,7 +78,7 @@
     },
     {
       id: 'edoc', q: 'What does Ben do at Edoc?',
-      kw: ['edoc', 'scriptus', 'intern', 'internship', 'current job', 'right now', 'healthcare', 'hospice', 'whitepaper'],
+      kw: ['edoc', 'scriptus', 'intern at', 'current job', 'right now', 'healthcare', 'hospice', 'whitepaper'],
       a: '<p>He&rsquo;s a Finance &amp; Growth Strategy Intern (since May 2026) and one of six on Edoc&rsquo;s Growth Team, working directly with the CEO and President.</p>' +
         '<ul><li>Sharpens positioning for Scriptus, Edoc&rsquo;s AI plus human-verified documentation platform for hospice care.</li>' +
         '<li>Rebuilt the 2026 whitepaper, restructuring most of an earlier draft with new research and a new design.</li>' +
@@ -89,7 +89,7 @@
     },
     {
       id: 'leadership', q: 'What leadership experience does he have?',
-      kw: ['lead', 'leader', 'leadership', 'manage people', 'officer', 'president', 'coach', 'captain', 'mentor', 'akpsi', 'alpha kappa', 'fraternity', 'special olympics'],
+      kw: ['lead', 'leader', 'leadership', 'manage people', 'officer', 'president', 'coach', 'captain', 'mentor', 'akpsi', 'alpha kappa', 'fraternity'],
       a: '<ul><li><b>VP of Finance, Alpha Kappa Psi:</b> one of 8 on the executive committee of a 161-member pre-professional business fraternity; mentors the finance branch.</li>' +
         '<li><b>Warden:</b> elected to the officer board as a sophomore; led the member standards process (70+ interviews).</li>' +
         '<li><b>Head Coach, Tulane Special Olympics:</b> leads practices for about 30 athletes and recruited 20+ volunteers for an ESPN Top 5 chapter.</li></ul>' +
@@ -106,7 +106,7 @@
         '<li><b>Leaves things better than he found them,</b> like a rebuilt whitepaper or a standards process that finished 30 minutes faster.</li></ul>' +
         '<p>His Psychology minor and years coaching Special Olympics athletes show up as patience and people-reading.</p>' +
         see([['how-i-work', 'How I work']]),
-      next: ['leadership', 'consulting', 'interests']
+      next: ['culture', 'challenge', 'consulting']
     },
     {
       id: 'ai', q: 'How does Ben use AI?',
@@ -129,21 +129,22 @@
     },
     {
       id: 'roles', q: 'What roles is Ben looking for?',
-      kw: ['looking for', 'roles', 'role', 'position', 'opportunit', 'full-time', 'full time', 'available', 'start date', 'when can', 'graduat', 'internship', 'job'],
+      kw: ['looking for', 'roles', 'role', 'position', 'industr', 'sector', 'opportunit', 'full-time', 'full time', 'available', 'start date', 'when can', 'graduat', 'internship', 'job'],
       a: '<p><b>Full-time roles</b> in <b>strategy, finance, and marketing</b>, starting after he graduates from Tulane&rsquo;s A.B. Freeman School of Business in <b>May 2027</b>. He isn&rsquo;t looking for internships.</p>' +
+        '<p>He&rsquo;s open on industry. Consulting, corporate strategy, sports business, healthcare, and startups all interest him; what matters most is the team.</p>' +
         '<p>For timing, location, or a specific opening, the fastest answer is an email: <a href="mailto:beisen@tulane.edu">beisen@tulane.edu</a>.</p>',
-      next: ['location', 'contact', 'why']
+      next: ['culture', 'future', 'location']
     },
     {
       id: 'location', q: 'Where is Ben based?',
       kw: ['where', 'location', 'based', 'relocat', 'city', 'remote', 'move', 'live', 'chicago', 'new orleans'],
-      a: '<p>He splits his time between <b>New Orleans</b> (Tulane) and <b>Chicago</b> (home), and studied in Barcelona in fall 2025. His Edoc internship is hybrid.</p>' +
-        '<p>For relocation or remote questions, email him directly: <a href="mailto:beisen@tulane.edu">beisen@tulane.edu</a>.</p>',
+      a: '<p><b>Chicago is his first choice.</b> It&rsquo;s home, and he&rsquo;d love to start his career there. He&rsquo;s also open to relocating for the right role and team.</p>' +
+        '<p>Right now he splits his time between New Orleans (Tulane) and Chicago, and he lived in Barcelona in fall 2025, so he adapts quickly to new places.</p>',
       next: ['roles', 'contact', 'education']
     },
     {
       id: 'education', q: 'Tell me about his education',
-      kw: ['school', 'education', 'tulane', 'gpa', 'major', 'minor', 'degree', 'coursework', 'class', 'barcelona', 'study abroad', 'freeman'],
+      kw: ['school', 'education', 'tulane', 'gpa', 'minor', 'degree', 'coursework', 'class', 'barcelona', 'study abroad', 'freeman'],
       a: '<ul><li><b>Tulane University, A.B. Freeman School of Business</b>: B.S. in Management, May 2027. Majors in Management and Marketing, minor in Psychology. GPA 3.65.</li>' +
         '<li>Alpha Lambda Delta Honor Society, Dean&rsquo;s List, Merit Scholarship.</li>' +
         '<li>Coursework: Strategic Consulting, Strategic Management, Financial Management, Negotiations, Sports Marketing, AI Tools.</li>' +
@@ -167,6 +168,48 @@
       next: ['roles', 'why', 'location']
     },
     {
+      id: 'culture', q: 'What kind of team brings out his best?',
+      kw: ['culture', 'team brings', 'environment', 'best work', 'ideal team', 'manager style', 'kind of team', 'workplace', 'motivat', 'thrive'],
+      a: '<p>A motivated, collaborative team where people say what they think.</p>' +
+        '<ul><li><b>Candor:</b> people who aren&rsquo;t afraid to speak their mind, and who welcome it back.</li>' +
+        '<li><b>Shared drive, individual ownership:</b> a group that pushes each other forward while everyone delivers on their own work.</li>' +
+        '<li><b>Curious, creative leaders:</b> teammates who want to keep learning and think differently about problems.</li></ul>' +
+        '<p>He does his best work when the people around him raise the bar, and he tries to do the same for them.</p>',
+      next: ['future', 'team', 'roles']
+    },
+    {
+      id: 'future', q: 'Where does he see himself in 5 years?',
+      kw: ['5 years', 'five years', 'will he be', 'future', 'long term', 'long-term', 'goal', 'ambition', 'aspire', 'career path', 'see himself'],
+      a: '<p>Leading a team. He wants to be the person who brings a group together, keeps it motivated, and helps it do its best work, at a place where he genuinely enjoys the people around him.</p>' +
+        '<p>He expects to be busy, in the good way: taking on more responsibility, learning fast, and growing as a leader and a professional. He already practices this as VP of Finance and as a head coach.</p>',
+      next: ['culture', 'leadership', 'roles']
+    },
+    {
+      id: 'challenge', q: 'What is the biggest challenge he has faced?',
+      kw: ['biggest challenge', 'challenge', 'difficult', 'hard', 'obstacle', 'overcome', 'time management', 'busy', 'balance', 'prioritiz', 'juggl', 'stress', 'pressure'],
+      a: '<p>Managing his time. He carries a full Freeman course load alongside Edoc, an executive role in Alpha Kappa Psi, coaching Special Olympics, and his friendships and personal growth.</p>' +
+        '<p>How he handles it: life hands you a lot of marbles to juggle. Some are <b>glass</b>, the ones that would shatter if you dropped them. Others are <b>plastic</b> and will bounce back. The skill is telling them apart, then protecting the glass ones first.</p>' +
+        '<p>That habit of prioritizing what truly matters, and not just what&rsquo;s loudest, is how he keeps every commitment and still delivers on each one.</p>',
+      next: ['team', 'origin', 'leadership']
+    },
+    {
+      id: 'origin', q: 'Why did he choose business?',
+      kw: ['why business', 'choose business', 'major in', 'why did he major', 'majors', 'psychology', 'background', 'story', 'grew up', 'sneaker', 'entrepreneur', 'started'],
+      a: '<p>He&rsquo;s been a businessperson since he was a kid: reselling sneakers, trading cards, and pitching his ideas to anyone who would listen.</p>' +
+        '<p>His mix of majors fits how he thinks. <b>Management and Marketing</b> give him the business and the numbers. <b>Psychology</b> feeds his real interest: how people think, decide, and stay motivated.</p>' +
+        '<p>Put together, he&rsquo;s a people-first strategist who can read a room, run the numbers, and lead a team toward a creative answer.</p>',
+      next: ['why', 'culture', 'serve']
+    },
+    {
+      id: 'serve', q: 'Why does he coach Special Olympics?',
+      kw: ['special olympics', 'why special', 'volunteer', 'coach', 'coaching', 'give back', 'community', 'service', 'grandfather', 'grandpa', 'miracle league', 'allied', 'why does he'],
+      a: '<p>It runs in the family. His grandfather leads work with the <b>Joe Nuxhall Miracle League</b> in the Cincinnati area, a nonprofit built so that every athlete, whatever their challenge, gets the chance to play. Ben has volunteered alongside him and watched that passion since he was a kid.</p>' +
+        '<p>He carried it forward as a partner in <b>Allied Soccer</b> at Stevenson High School, which brings students with and without disabilities onto the same team, and now as a <b>head coach with Tulane Special Olympics</b>.</p>' +
+        '<p>For him it&rsquo;s simple: he gets to share the sports he loves, support people, and lead a team, and it&rsquo;s one of the most rewarding things he does.</p>' +
+        see([['leadership', 'Head coach role']]),
+      next: ['leadership', 'team', 'origin']
+    },
+    {
       id: 'interests', q: 'What does Ben do for fun?',
       kw: ['fun', 'hobby', 'hobbies', 'interest', 'outside of work', 'free time', 'sports', 'weekend', 'personal'],
       a: '<p>He follows Manchester United and every Chicago team (Bears, Cubs, Bulls), lifts, skis whenever he can, and cooks. He&rsquo;s also an Alpha Epsilon Pi brother.</p>' +
@@ -176,7 +219,7 @@
   ];
   var byId = {}; KB.forEach(function (k) { byId[k.id] = k; });
   var ROLES = [['Consulting', 'consulting'], ['Finance', 'finance'], ['Marketing', 'marketing'], ['Strategy / Ops', 'strategy']];
-  var START = ['why', 'consulting', 'edoc', 'leadership', 'ai', 'roles'];
+  var START = ['why', 'consulting', 'culture', 'challenge', 'serve', 'roles'];
 
   function scroll() { log.scrollTop = log.scrollHeight; }
   function add(cls, html) {
@@ -220,7 +263,7 @@
       var s = 0;
       k.kw.forEach(function (w) {
         var hit = w.length <= 4 ? t.indexOf(' ' + w + ' ') !== -1 : t.indexOf(w) !== -1;
-        if (hit) s += w.length > 4 ? 2 : 1;
+        if (hit) s += w.indexOf(' ') !== -1 ? 3 : (w.length > 4 ? 2 : 1);
       });
       if (s > score) { score = s; best = k; }
     });
