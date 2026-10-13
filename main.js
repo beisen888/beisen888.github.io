@@ -714,6 +714,8 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
       if (small.matches && Math.abs(y - lastY) > 6) { hidden = y > lastY; lastY = y; }
       if (!small.matches) hidden = false;
       dock.classList.toggle('show', past && !atContact && !hidden);
+      var al = document.querySelector('.ask-launch');
+      if (al) al.classList.toggle('ready', past && !atContact);
     };
     window.addEventListener('scroll', check, { passive: true }); check();
     dock.querySelector('.dock-top').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });

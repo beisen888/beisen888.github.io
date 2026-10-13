@@ -942,3 +942,23 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
   .ask { right: 0; left: 0; bottom: 0; width: 100%; height: 88vh; height: 88dvh; border-radius: 18px 18px 0 0; }
 }
 @media (min-width: 901px) { .dock { left: calc(50% - 90px); } }
+
+/* ============ Audit pass: calmer, tighter ============ */
+.sub-head { margin: 64px 0 28px; font-family: var(--display); font-size: 26px; font-weight: 800; font-stretch: 112%; color: var(--label); letter-spacing: -.01em; }
+.rail { display: none !important; }
+.cmdk-btn { display: none !important; }
+.ask-launch { opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .35s ease, transform .35s ease, box-shadow .25s ease; }
+.ask-launch.ready { opacity: 1; pointer-events: auto; transform: none; }
+.ask-launch.ready.hide { opacity: 0; pointer-events: none; }
+.radar-keys b.lvl { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.radar-keys b.lvl-top { background: var(--green); color: #fff; }
+.radar-keys b.lvl-hi { background: var(--tint); color: var(--label); }
+:root[data-theme="dark"] .radar-keys b.lvl-top { background: var(--sky); color: var(--green-deep); }
+.footer b { color: #fff; font-weight: 700; }
+.tk-rating { color: #7ff0b4; }
+@media (max-width: 900px) { .sub-head { margin-top: 48px; font-size: 22px; } }
+.radar-keys { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.radar-keys button { min-width: 0; flex-wrap: wrap; }
+.radar-keys button span { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 900px) { .skills-layout { grid-template-columns: minmax(0, 1fr); } .radar-keys { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.radar-keys button { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 4px; }
