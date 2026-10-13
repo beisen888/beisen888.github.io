@@ -115,7 +115,8 @@
         '<ul><li>Holds Tulane&rsquo;s AI Literacy Certificate and took an Artificial Intelligence Tools course.</li>' +
         '<li>Designed and built this entire site with Claude as his AI partner, from layout to these interactive features.</li>' +
         '<li>Uses Claude and ChatGPT day to day for research and drafting, and positions an AI product (Scriptus) at Edoc.</li></ul>' +
-        '<p>His take: use AI to move faster on research, analysis, and building, and keep the judgment calls human.</p>',
+        '<p>His take: use AI to move faster on research, analysis, and building, and keep the judgment calls human.</p>' +
+        see([['case-site', 'How he built this site']]),
       next: ['edoc', 'skills', 'why']
     },
     {

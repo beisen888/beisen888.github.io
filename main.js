@@ -657,14 +657,14 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
   }
 
   /* Live site stats from GitHub */
-  var cEl = $('.cs-commits'), uEl = $('.cs-updated');
+  var cEls = $$('.cs-commits'), uEl = $('.cs-updated'), cEl = cEls[0];
   if (cEl && window.fetch && location.protocol.indexOf('http') === 0) {
     fetch('https://api.github.com/repos/beisen888/beisen888.github.io/commits?per_page=1', { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (r) {
         if (!r.ok) throw new Error();
         var link = r.headers.get('Link') || '';
         var m = link.match(/page=(\d+)>; rel="last"/);
-        if (m) cEl.textContent = m[1];
+        if (m) cEls.forEach(function (e) { e.textContent = m[1]; });
         return r.json();
       })
       .then(function (data) {

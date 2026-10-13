@@ -962,3 +962,13 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .radar-keys button span { min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 900px) { .skills-layout { grid-template-columns: minmax(0, 1fr); } .radar-keys { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .radar-keys button { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 4px; }
+
+/* ============ This-site case: build log ============ */
+.build-steps { list-style: none; margin: 14px 0 0; padding: 0 0 0 18px; border-left: 2px solid var(--rule); display: grid; gap: 14px; }
+.build-steps li { position: relative; display: grid; grid-template-columns: 74px 1fr; column-gap: 12px; }
+.build-steps li::before { content: ""; position: absolute; left: -25px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--label); }
+.build-steps li:last-child::before { background: var(--label); }
+.build-steps time { grid-row: span 2; font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--label); }
+.build-steps b { font-family: var(--display); font-size: 15px; }
+.build-steps span { font-size: 15px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 480px) { .build-steps li { grid-template-columns: 1fr; } .build-steps time { grid-row: auto; } }

@@ -31,13 +31,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/ben-eisen.webp">
-  <link rel="stylesheet" href="style.css?v=20261013b">
+  <link rel="stylesheet" href="style.css?v=20261013c">
   <script>
     document.documentElement.classList.replace('no-js', 'js');
     try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
-  <script src="main.js?v=20261013b" defer></script>
-  <script src="ask.js?v=20261013b" defer></script>
+  <script src="main.js?v=20261013c" defer></script>
+  <script src="ask.js?v=20261013c" defer></script>
 
   <script type="application/ld+json">
   {
@@ -254,6 +254,7 @@
               <button type="button" class="chip" aria-pressed="false" data-filter="internship">Internship</button>
               <button type="button" class="chip" aria-pressed="false" data-filter="strategy">Strategy</button>
               <button type="button" class="chip" aria-pressed="false" data-filter="marketing">Marketing</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="ai">AI</button>
             </div>
           </div>
         </div>
@@ -387,6 +388,44 @@
                 <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-15.webp" data-caption="Four-phase implementation"><img src="assets/work/qualico-slide-15.webp" alt="Solution implementation phases slide" width="1280" height="720" loading="lazy"></button>
                 <button type="button" class="zoom" data-lightbox="qualico" data-src="assets/work/qualico-slide-16.webp" data-caption="Qualico 2031: the vision for the future"><img src="assets/work/qualico-slide-16.webp" alt="Vision for the future slide" width="1280" height="720" loading="lazy"></button>
               </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- This site -->
+        <article class="case reveal" data-cat="ai" id="case-site">
+          <div class="case-meta">
+            <p class="case-tag">Personal project, built with AI</p>
+            <h3>This website, built with an AI partner</h3>
+            <p class="case-sum">I designed and shipped this site in about two weeks, using Claude as my coding partner. I set the direction, made every content and design call, and checked every change before it went live.</p>
+            <p class="case-role"><strong>My role:</strong> Product owner and editor: brief, content, design direction, confidentiality review, and final sign-off.</p>
+            <ul class="kpis" aria-label="Key numbers">
+              <li><b class="cs-commits">30+</b> updates shipped</li><li><b>6</b> peer reviews</li><li><b>0</b> templates</li>
+            </ul>
+          </div>
+          <div class="case-body">
+            <figure class="case-visual build-log" aria-labelledby="build-cap">
+              <p class="matrix-title" id="build-cap">How it came together</p>
+              <ol class="build-steps">
+                <li><time>Sep 28</time><b>Version 1 live</b><span>Resume rebuilt in Freeman format, first site published on GitHub Pages</span></li>
+                <li><time>Oct 1&ndash;7</time><b>Peer review</b><span>Six classmates said: stand out more, show real work, fix contrast</span></li>
+                <li><time>Oct 11</time><b>Rebuild</b><span>New design, five case studies, interactive matrix and roadmap, every change logged separately</span></li>
+                <li><time>Oct 11</time><b>Confidentiality review</b><span>Audited every Edoc and AKPsi detail and rewrote anything sensitive without weakening it</span></li>
+                <li><time>Oct 12</time><b>Ask about Ben</b><span>A Q&amp;A assistant that answers only from what&rsquo;s on this site</span></li>
+                <li><time>Oct 13</time><b>Self-audit</b><span>Reviewed the site like a recruiter would and cut about 15% of it</span></li>
+              </ol>
+            </figure>
+            <button type="button" class="case-toggle" aria-expanded="false" aria-controls="more-site"><span>Open case study</span></button>
+            <div class="case-more" id="more-site">
+              <div class="case-more-inner">
+              <dl class="case-steps">
+                <div><dt>The question</dt><dd>Can a business student, not an engineer, use AI to build something that looks and works like a professional product?</dd></div>
+                <div><dt>How I used AI</dt><dd>I treated Claude like a capable teammate: I wrote the brief, fed it my real material (resume, decks, whitepaper), reviewed screenshots of every change on desktop and phone, and pushed back when something felt off. AI made the building fast; the judgment calls stayed mine.</dd></div>
+                <div><dt>What&rsquo;s inside</dt><dd>A live decision matrix, a career chart drawn in code, a recruiter quick view, an advice inbox, a Q&amp;A assistant, dark mode, a QR share card, and a print-ready resume version.</dd></div>
+                <div><dt>The takeaway</dt><dd>The skill isn&rsquo;t typing prompts. It&rsquo;s knowing what good looks like, giving clear direction, and checking the work, which is the same thing a manager does.</dd></div>
+              </dl>
+              <p class="case-link"><a href="https://github.com/beisen888/beisen888.github.io/commits/main" target="_blank" rel="noopener">See every change on GitHub</a></p>
               </div>
             </div>
           </div>
