@@ -454,7 +454,7 @@ h1 {
 .tk-dot { width: 8px; height: 8px; border-radius: 50%; background: #0f9b5f; animation: pulse 2.2s infinite; }
 .tk-rating { font-weight: 600; font-size: 12px; background: var(--green-deep); color: #7ff0b4; padding: 3px 8px; border-radius: 3px; }
 .tk-window { display: flex; flex: 1; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
-.tk-track { list-style: none; margin: 0; padding: 0; display: flex; flex: none; animation: ticker 60s linear infinite; }
+.tk-track { list-style: none; margin: 0; padding: 0; display: flex; flex: none; animation: ticker 90s linear infinite; }
 .ticker:hover .tk-track, .ticker:focus-within .tk-track { animation-play-state: paused; }
 .tk-track li { display: flex; align-items: baseline; gap: 10px; padding: 14px 26px; border-right: 1px solid rgba(255,255,255,.08); white-space: nowrap; }
 .tk-sym { font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #9fb8ad; }
@@ -980,3 +980,7 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .msg .q-list button { text-align: left; font-family: var(--display); font-size: 13px; font-weight: 600; cursor: pointer; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); }
 .msg .q-list button:hover { border-color: var(--label); color: var(--label); }
 .msg .q-group { font-family: var(--display); font-size: 12px; font-weight: 700; color: var(--label); margin: 10px 0 2px; }
+
+/* Ticker waits for the hero intro to finish before it starts moving */
+.tk-track { animation-delay: 2.2s; }
+.ticker.waiting .tk-track { animation-play-state: paused; }
