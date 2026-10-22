@@ -344,18 +344,53 @@
     chips(START);
   }
 
+  /* Phones: the panel is a bottom sheet. Size it to the *visible* viewport so
+     the on-screen keyboard never covers the input or pushes the header away,
+     and lock the page behind it so scrolls stay inside the chat. */
+  var phone = window.matchMedia('(max-width: 900px)');
+  var vv = window.visualViewport;
+  if (phone.matches) input.placeholder = 'Ask anything about Ben';
+  function fit() {
+    if (panel.hidden || !phone.matches) { panel.style.top = ''; panel.style.height = ''; return; }
+    var h = vv ? vv.height : window.innerHeight;
+    var top = (vv ? vv.offsetTop : 0) + Math.max(10, Math.round(h * 0.08));
+    panel.style.top = top + 'px';
+    panel.style.height = ((vv ? vv.offsetTop : 0) + h - top) + 'px';
+  }
+  if (vv) { vv.addEventListener('resize', fit); vv.addEventListener('scroll', fit); }
+  window.addEventListener('resize', fit);
+  var lockY = 0;
+  function lock(on) {
+    var root = document.documentElement;
+    if (on && phone.matches) {
+      lockY = window.scrollY;
+      root.classList.add('ask-open');
+      document.body.style.top = -lockY + 'px';
+    } else if (!on && root.classList.contains('ask-open')) {
+      root.classList.remove('ask-open');
+      document.body.style.top = '';
+      window.scrollTo({ top: lockY, behavior: 'instant' });
+    }
+  }
+
   var openers = Array.prototype.slice.call(document.querySelectorAll('.ask-launch, .dock-ask, .menu-ask'));
   function open() {
     var m = document.querySelector('.site-menu'); if (m && m.open) m.close();
-    panel.hidden = false; start();
+    panel.hidden = false; start(); lock(true); fit();
     if (launch) { launch.classList.add('hide'); launch.setAttribute('aria-expanded', 'true'); }
     if (window.matchMedia('(pointer: fine)').matches) input.focus();
   }
   function close() {
-    panel.hidden = true;
-    if (launch) { launch.classList.remove('hide'); launch.setAttribute('aria-expanded', 'false'); launch.focus(); }
+    input.blur();
+    panel.hidden = true; lock(false); fit();
+    if (launch) { launch.classList.remove('hide'); launch.setAttribute('aria-expanded', 'false'); if (!phone.matches) launch.focus(); }
   }
-  openers.forEach(function (b) { b.addEventListener('click', function () { if (panel.hidden) open(); else close(); }); });
+  openers.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      if (panel.hidden) setTimeout(open, 0); else close();
+    });
+  });
   panel.querySelector('.ask-close').addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden && !document.querySelector('dialog[open]')) close(); });
   form.addEventListener('submit', function (e) { e.preventDefault(); var v = input.value; input.value = ''; ask(v); });

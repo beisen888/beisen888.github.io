@@ -1060,3 +1060,16 @@ kbd { font-family: var(--display); font-size: 12px; font-weight: 700; border: 1p
 .now-k { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); }
 .now-i + .now-i::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--sky); margin: 0 14px 3px 0; vertical-align: middle; }
 @media (max-width: 480px) { .now { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 14px; line-height: 1.35; } .now-k { grid-row: span 2; padding-top: 2px; } .now-i + .now-i::before { display: none; } }
+
+/* ============ Ask about Ben: phone fixes ============ */
+html.ask-open, html.ask-open body { overflow: hidden; }
+html.ask-open body { position: fixed; left: 0; right: 0; width: 100%; }
+@media (max-width: 900px) {
+  .ask { max-height: none; animation-name: askUp; }
+  .ask-form { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .ask-log { -webkit-overflow-scrolling: touch; }
+  .ask-close { width: 44px; height: 44px; }
+  .dock-ask { gap: 6px; }
+  .dock-ask::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #7ff0b4; box-shadow: 0 0 0 3px rgba(127,240,180,.18); }
+}
+@keyframes askUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }

@@ -712,9 +712,8 @@ console.log('%cHey, you opened the console.%c\nI built this site with Claude as 
       var past = hero.getBoundingClientRect().bottom < 0;
       var contact = document.getElementById('contact');
       var atContact = contact && contact.getBoundingClientRect().top < window.innerHeight * 0.6;
-      // On phones, tuck the dock away while scrolling down so it never covers content
-      if (small.matches && Math.abs(y - lastY) > 6) { hidden = y > lastY; lastY = y; }
-      if (!small.matches) hidden = false;
+      // The dock carries the only "Ask" button on phones, so keep it in reach once past the hero
+      hidden = false; lastY = y;
       dock.classList.toggle('show', past && !atContact && !hidden);
       var al = document.querySelector('.ask-launch');
       if (al) al.classList.toggle('ready', past && !atContact);
