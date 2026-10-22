@@ -113,7 +113,7 @@
       kw: ['ai', 'ai tools', 'artificial', 'chatgpt', 'claude', 'llm', 'technology', 'tech', 'automation', 'digital', 'website', 'built this'],
       a: '<p>Comfortably, and with judgment:</p>' +
         '<ul><li>Holds Tulane&rsquo;s AI Literacy Certificate and took an Artificial Intelligence Tools course.</li>' +
-        '<li>Designed and built this entire site with Claude as his AI partner, from layout to these interactive features.</li>' +
+        '<li>Built this website with AI.</li>' +
         '<li>Uses Claude and ChatGPT day to day for research and drafting, and positions an AI product (Scriptus) at Edoc.</li></ul>' +
         '<p>His take: use AI to move faster on research, analysis, and building, and keep the judgment calls human.</p>' +
         see([['case-site', 'How he built this site']]),
@@ -214,7 +214,7 @@
       kw: ['different', 'unique', 'stand out from', 'compared to', 'other candidates', 'edge', 'special about', 'set him apart'],
       a: '<p>Three things you don&rsquo;t usually see together in a new grad:</p>' +
         '<ul><li><b>Executive exposure already.</b> He works directly with Edoc&rsquo;s CEO and President on a six-person Growth Team.</li>' +
-        '<li><b>A builder&rsquo;s instinct.</b> He&rsquo;s been selling and pitching since he was a kid, and he built this whole site with AI as his partner.</li>' +
+        '<li><b>A builder&rsquo;s instinct.</b> He&rsquo;s been selling and pitching since he was a kid, and he built this website with AI.</li>' +
         '<li><b>People-first and numbers-fluent.</b> Psychology plus Management and Marketing: he can run a budget and read a room.</li></ul>' +
         see([['case-site', 'How he built this site'], ['case-scriptus', 'Edoc work']]),
       next: ['why', 'origin', 'ai']

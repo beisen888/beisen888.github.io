@@ -4,7 +4,7 @@
 
 Personal portfolio for Ben Eisen, Tulane A.B. Freeman School of Business, Class of 2027.
 
-Built with plain HTML and CSS (no framework) and published with GitHub Pages. Built with Claude as an AI coding assistant.
+Built with plain HTML and CSS (no framework) and published with GitHub Pages. Built with AI.
 
 - `index.html`: page content and structure
 - `style.css`: design, layout, and mobile styles

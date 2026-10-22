@@ -1,5 +1,5 @@
 /* Ben Eisen portfolio, build 2026-10-11c */
-console.log('%cHey, you opened the console.%c\nI built this site with Claude as my AI partner. If you like what you see: beisen@tulane.edu', 'font: 700 16px sans-serif; color: #0b4a36', 'font: 13px sans-serif');
+console.log('%cHey, you opened the console.%c\nI built this site with AI. If you like what you see: beisen@tulane.edu', 'font: 700 16px sans-serif; color: #0b4a36', 'font: 13px sans-serif');
 /* Ben Eisen portfolio: interactive layer.
    Everything here is progressive: the page reads fine without it. */
 (function () {
