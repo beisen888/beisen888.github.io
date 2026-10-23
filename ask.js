@@ -61,7 +61,7 @@
         '<li><b>Consumer strategy:</b> segmented fans and built two flagship campaigns for the Toronto Huskies NFL expansion project.</li>' +
         '<li><b>Selling:</b> 400+ leads converted and 2,500+ customers engaged as a brand ambassador for nine national brands.</li></ul>' +
         '<p>Tools: HubSpot CRM and HubSpot Academy, Canva, and customer journey mapping.</p>' +
-        see([['case-scriptus', 'Scriptus'], ['case-huskies', 'Toronto Huskies']]),
+        see([['case-scriptus', 'Scriptus']]),
       next: ['edoc', 'skills', 'why']
     },
     {
@@ -73,7 +73,7 @@
         '<li>Org-design diagnosis and a phased rollout for Qualico.</li>' +
         '<li>Day-to-day strategy work with Edoc&rsquo;s CEO and President.</li></ul>' +
         '<p>His working rule: find the real problem first, then solve it.</p>' +
-        see([['projects', 'All projects'], ['how-i-work', 'How he works']]),
+        see([['projects', 'All projects']]),
       next: ['consulting', 'team', 'edoc']
     },
     {
@@ -105,7 +105,7 @@
         '<li><b>Asks what the problem actually is</b> before jumping to answers.</li>' +
         '<li><b>Leaves things better than he found them,</b> like a rebuilt whitepaper or a standards process that finished 30 minutes faster.</li></ul>' +
         '<p>His Psychology minor and years coaching Special Olympics athletes show up as patience and people-reading.</p>' +
-        see([['how-i-work', 'How I work']]),
+        see([['case-tsa', 'TSA case']]),
       next: ['culture', 'challenge', 'consulting']
     },
     {
@@ -116,7 +116,7 @@
         '<li>Built this website with AI.</li>' +
         '<li>Uses Claude and ChatGPT day to day for research and drafting, and positions an AI product (Scriptus) at Edoc.</li></ul>' +
         '<p>His take: use AI to move faster on research, analysis, and building, and keep the judgment calls human.</p>' +
-        see([['case-site', 'How he built this site']]),
+        see([['projects', 'Projects']]),
       next: ['edoc', 'skills', 'why']
     },
     {
@@ -157,7 +157,7 @@
       kw: ['skill', 'strength', 'good at', 'tools', 'hubspot', 'software', 'certif', 'capabilit'],
       a: '<p>Strongest at <b>strategy</b>, <b>leadership</b>, and <b>communication</b>, followed by marketing, finance, and research.</p>' +
         '<p>Tools: HubSpot CRM, Asana, Claude, ChatGPT, Microsoft Office, Google Workspace, Canva. Certifications: AI Literacy (Tulane), HubSpot Academy, Microsoft Excel.</p>' +
-        see([['skills', 'Skills chart']]),
+        see([['experience', 'Experience'], ['education', 'Tools']]),
       next: ['finance', 'marketing', 'ai']
     },
     {
@@ -216,7 +216,7 @@
         '<ul><li><b>Executive exposure already.</b> He works directly with Edoc&rsquo;s CEO and President on a six-person Growth Team.</li>' +
         '<li><b>A builder&rsquo;s instinct.</b> He&rsquo;s been selling and pitching since he was a kid, and he built this website with AI.</li>' +
         '<li><b>People-first and numbers-fluent.</b> Psychology plus Management and Marketing: he can run a budget and read a room.</li></ul>' +
-        see([['case-site', 'How he built this site'], ['case-scriptus', 'Edoc work']]),
+        see([['case-scriptus', 'Edoc work']]),
       next: ['why', 'origin', 'ai']
     },
     {
